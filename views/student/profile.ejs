@@ -1,0 +1,84 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<%- include('../partials/messages') %>
+
+<section class="py-4 bg-light min-vh-100">
+    <div class="container py-3">
+        <div class="row g-4">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="student-sidebar text-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle d-inline-block mb-3" style="width: 70px; height: 70px; line-height: 40px;">
+                        <i class="fas fa-user-graduate fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1 text-primary"><%= student.name %></h5>
+                    <span class="badge bg-warning text-dark fw-bold mb-3"><%= student.course %></span>
+
+                    <ul class="sidebar-menu text-start">
+                        <li><a href="/student/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                        <li><a href="/student/profile" class="active"><i class="fas fa-user-edit"></i> My Profile</a></li>
+                        <li><a href="/student/admission-details"><i class="fas fa-file-invoice"></i> Admission Status</a></li>
+                        <li><a href="/announcements"><i class="fas fa-bullhorn"></i> Notice Board</a></li>
+                        <li><a href="/student/logout" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Profile Form -->
+            <div class="col-lg-9">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                    <h4 class="fw-bold text-primary mb-4"><i class="fas fa-id-card me-2 text-warning"></i> Personal Profile Information</h4>
+
+                    <form action="/student/profile" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Full Name</label>
+                                <input type="text" name="name" class="form-control" value="<%= student.name %>" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Email Address (Read Only)</label>
+                                <input type="email" class="form-control bg-light" value="<%= student.email %>" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Mobile Number</label>
+                                <input type="tel" name="phone" class="form-control" value="<%= student.phone %>" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Course Enrolled</label>
+                                <select name="course" class="form-select" required>
+                                    <% courses.forEach(function(c) { %>
+                                        <option value="<%= c.title %>" <%= student.course === c.title ? 'selected' : '' %>><%= c.title %></option>
+                                    <% }); %>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Gender</label>
+                                <select name="gender" class="form-select">
+                                    <option value="Male" <%= student.gender === 'Male' ? 'selected' : '' %>>Male</option>
+                                    <option value="Female" <%= student.gender === 'Female' ? 'selected' : '' %>>Female</option>
+                                    <option value="Other" <%= student.gender === 'Other' ? 'selected' : '' %>>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Date of Birth</label>
+                                <input type="date" name="dob" class="form-control" value="<%= student.dob ? new Date(student.dob).toISOString().split('T')[0] : '' %>">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Address</label>
+                                <textarea name="address" rows="3" class="form-control"><%= student.address %></textarea>
+                            </div>
+
+                            <div class="col-12 mt-4 text-end">
+                                <button type="submit" class="btn btn-blue px-4 py-2 fw-bold">
+                                    <i class="fas fa-save me-1"></i> Save Profile Changes
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

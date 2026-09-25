@@ -1,0 +1,121 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<%- include('../partials/messages') %>
+
+<section class="py-4 bg-light min-vh-100">
+    <div class="container py-3">
+        <div class="row g-4">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="admin-sidebar text-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle d-inline-block mb-3" style="width: 70px; height: 70px; line-height: 40px;">
+                        <i class="fas fa-user-shield fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1 text-primary"><%= admin.name %></h5>
+                    <span class="badge bg-danger fw-bold mb-3"><%= admin.role %></span>
+
+                    <ul class="sidebar-menu text-start">
+                        <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="/admin/admissions" class="active"><i class="fas fa-file-signature"></i> Admissions</a></li>
+                        <li><a href="/admin/students"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+                        <li><a href="/admin/courses"><i class="fas fa-book"></i> Manage Courses</a></li>
+                        <li><a href="/admin/announcements"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+                        <li><a href="/admin/contacts"><i class="fas fa-envelope-open-text"></i> Contact Enquiries</a></li>
+                        <li><a href="/admin/logout" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Manage Admissions Content -->
+            <div class="col-lg-9">
+                <div class="custom-table-container p-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                        <div>
+                            <h3 class="fw-bold text-primary mb-0">Admission Applications</h3>
+                            <small class="text-muted">Total Online Applications: <%= admissions.length %></small>
+                        </div>
+                        
+                        <div>
+                            <input type="text" class="form-control table-search-input" data-table="admissionsTable" placeholder="Search applicant, stream or course...">
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0" id="admissionsTable">
+                            <thead>
+                                <tr>
+                                    <th>Applicant & Parent Contact</th>
+                                    <th>Stream / Course</th>
+                                    <th>Marks %</th>
+                                    <th>Applied Date</th>
+                                    <th>Status</th>
+                                    <th class="text-end">Manage Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (admissions && admissions.length > 0) { %>
+                                    <% admissions.forEach(function(adm) { %>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-dark"><%= adm.fullName %></strong><br>
+                                                <small class="text-muted"><i class="fas fa-envelope me-1"></i><%= adm.email %></small><br>
+                                                <small class="text-primary"><i class="fas fa-phone me-1"></i><%= adm.phone %> (Parent: <%= adm.parentPhone %>)</small>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border mb-1"><%= adm.stream %></span><br>
+                                                <small class="fw-bold text-primary"><%= adm.course %></small>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-warning text-dark fw-bold"><%= adm.previousPercentage %>%</span>
+                                            </td>
+                                            <td><small class="text-muted"><%= new Date(adm.createdAt).toLocaleDateString() %></small></td>
+                                            <td>
+                                                <% if (adm.status === 'Approved') { %>
+                                                    <span class="badge status-approved">Approved</span>
+                                                <% } else if (adm.status === 'Rejected') { %>
+                                                    <span class="badge status-rejected">Rejected</span>
+                                                <% } else { %>
+                                                    <span class="badge status-pending">Pending</span>
+                                                <% } %>
+                                            </td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <!-- Update Status Form -->
+                                                    <form action="/admin/admissions/update-status/<%= adm._id %>" method="POST" class="d-inline">
+                                                        <input type="hidden" name="status" value="Approved">
+                                                        <button type="submit" class="btn btn-sm btn-success" title="Approve Admission">
+                                                            <i class="fas fa-check"></i> Approve
+                                                        </button>
+                                                    </form>
+
+                                                    <form action="/admin/admissions/update-status/<%= adm._id %>" method="POST" class="d-inline">
+                                                        <input type="hidden" name="status" value="Rejected">
+                                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Reject Application">
+                                                            <i class="fas fa-times"></i>
+                                                        </button>
+                                                    </form>
+
+                                                    <form action="/admin/admissions/delete/<%= adm._id %>" method="POST" class="d-inline">
+                                                        <button type="submit" class="btn btn-sm btn-light border text-danger btn-delete-confirm">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="6" class="text-center py-4 text-muted">No admission applications stored yet.</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

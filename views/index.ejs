@@ -1,0 +1,461 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+<%- include('partials/messages') %>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <div class="hero-badge">
+                    <i class="fas fa-star text-warning"></i> FUN + LEARNING • ESTABLISHED 2019
+                </div>
+                <h1 class="hero-title">
+                    ADMISSION OPEN FOR <span>School, College & Degrees</span>
+                </h1>
+                <p class="hero-subtitle mb-3" style="font-size: 19px; font-weight: 500;">
+                    <em>"It's your time to learn, grow and achieve So, grab the opportunity now."</em>
+                </p>
+                <p class="text-white-50 mb-4" style="font-size: 15px;">
+                    Comprehensive coaching for <strong>School (5th to S.S.C)</strong>, <strong>Commerce (FYJC, SYJC, B.Com, BMS, BAF)</strong>, <strong>Science (NEET, JEE, MH-CET)</strong>, <strong>Arts (FYJC, SYJC, B.A.)</strong>, and <strong>Professional (CA, CMA, CFA)</strong> in Andheri (West), Mumbai.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="/admission" class="btn btn-yellow btn-lg px-4 py-3">
+                        <i class="fas fa-file-signature me-2"></i> Apply for Admission
+                    </a>
+                    <a href="/contact" class="btn btn-outline-white btn-lg px-4 py-3">
+                        <i class="fas fa-play-circle me-2"></i> Book Free Demo Class
+                    </a>
+                </div>
+
+                <!-- Stats Counter Row -->
+                <div class="row mt-5 pt-3 g-3">
+                    <div class="col-4">
+                        <div class="hero-stat-card text-center">
+                            <div class="hero-stat-number">2019</div>
+                            <div class="hero-stat-label">Established</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="hero-stat-card text-center">
+                            <div class="hero-stat-number">100%</div>
+                            <div class="hero-stat-label">Concept Clarity</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="hero-stat-card text-center">
+                            <div class="hero-stat-number">All</div>
+                            <div class="hero-stat-label">Streams & Degrees</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="hero-feature-card text-dark text-start">
+                    <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom">
+                        <div class="brand-icon-box flex-shrink-0" style="width: 52px; height: 52px; font-size: 24px;">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold text-primary">Ansari Tutorial</h5>
+                            <small class="text-warning fw-bold"><i class="fas fa-map-marker-alt me-1"></i> Andheri (West), Mumbai</small>
+                        </div>
+                    </div>
+                    
+                    <h6 class="fw-bold text-secondary mb-3"><i class="fas fa-check-circle text-success me-1"></i> Why Students Love Our Classes:</h6>
+                    <ul class="list-unstyled mb-4 small">
+                        <li class="mb-2.5 d-flex align-items-center gap-2">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span><strong>Experienced Faculty:</strong> Dedicated & skilled educators</span>
+                        </li>
+                        <li class="mb-2.5 d-flex align-items-center gap-2">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span><strong>Quality Teaching:</strong> Concept-based learning focus</span>
+                        </li>
+                        <li class="mb-2.5 d-flex align-items-center gap-2">
+                            <i class="fas fa-heart text-danger"></i>
+                            <span><strong>Special Attention:</strong> Personalized care for slow learners</span>
+                        </li>
+                        <li class="mb-2.5 d-flex align-items-center gap-2">
+                            <i class="fas fa-play-circle text-warning"></i>
+                            <span><strong>Free Demo Class:</strong> Try our teaching before deciding</span>
+                        </li>
+                        <li class="mb-2.5 d-flex align-items-center gap-2">
+                            <i class="fas fa-hand-holding-usd text-success"></i>
+                            <span><strong>Easy Fees:</strong> Budget-friendly installments</span>
+                        </li>
+                        <li class="mb-2.5 d-flex align-items-center gap-2">
+                            <i class="fas fa-bolt text-warning"></i>
+                            <span><strong>Instant Doubts:</strong> On-the-spot doubt resolution</span>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex gap-2">
+                        <a href="tel:7666875408" class="btn btn-blue w-100 py-2.5 fw-bold">
+                            <i class="fas fa-phone-alt me-1"></i> Call 7666875408
+                        </a>
+                        <a href="https://wa.me/917666875408?text=Hello%20Ansari%20Tutorial,%20I%20want%20to%20book%20a%20demo%20class." target="_blank" rel="noopener" class="btn btn-success px-3 py-2.5 fw-bold" title="WhatsApp Chat">
+                            <i class="fab fa-whatsapp fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Announcements Ticker -->
+<% if (typeof latestAnnouncements !== 'undefined' && latestAnnouncements && latestAnnouncements.length > 0) { %>
+    <section class="notice-ticker-bar">
+        <div class="container">
+            <div class="d-flex align-items-center gap-3 overflow-hidden">
+                <span class="notice-ticker-pill">
+                    <i class="fas fa-bell"></i> Center Notice
+                </span>
+                <marquee behavior="scroll" direction="left" scrollamount="6" class="fw-semibold m-0 text-dark">
+                    <% latestAnnouncements.forEach(function(notice) { %>
+                        <span class="me-5">
+                            <i class="fas fa-circle text-danger me-1" style="font-size: 8px;"></i>
+                            <strong><%= notice.title %>:</strong> <%= notice.content %>
+                        </span>
+                    <% }); %>
+                </marquee>
+                <a href="/announcements" class="btn btn-sm btn-dark text-warning fw-bold flex-shrink-0 d-none d-md-inline-block">View Notices</a>
+            </div>
+        </div>
+    </section>
+<% } %>
+
+<!-- Core Features Section (Direct from Official Pamphlet) -->
+<section class="py-5 bg-white">
+    <div class="container py-3">
+        <div class="section-header">
+            <span class="section-subtitle">Features</span>
+            <h2 class="section-title">What Makes Ansari Tutorial Special</h2>
+            <p class="section-lead">"Fun + Learning" — Where every student's learning journey is nurtured with care.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="custom-card p-4 text-center">
+                    <div class="card-icon-box mx-auto">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Experienced Faculty</h5>
+                    <p class="text-muted small">Learn from skilled, dedicated teachers committed to making every subject enjoyable and straightforward.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="custom-card p-4 text-center">
+                    <div class="card-icon-box yellow mx-auto">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Quality Teaching</h5>
+                    <p class="text-muted small">Concept-based learning for better understanding, long-term retention, and high exam confidence.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="custom-card p-4 text-center border-2 border-warning">
+                    <div class="card-icon-box mx-auto" style="background: rgba(239, 68, 68, 0.1); color: #dc2626;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h5 class="fw-bold text-danger mb-2">Special Attention to Slow Learners</h5>
+                    <p class="text-muted small">We prioritize and focus on every student's individual progress. No student is rushed or left behind.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="custom-card p-4 text-center">
+                    <div class="card-icon-box yellow mx-auto">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Free Demo Class</h5>
+                    <p class="text-muted small">Experience our teaching firsthand before you decide. Attend demo sessions in your preferred stream.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="custom-card p-4 text-center">
+                    <div class="card-icon-box mx-auto">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Affordable Fees & Easy Options</h5>
+                    <p class="text-muted small">Quality education that fits your family budget with convenient installment schedules.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="custom-card p-4 text-center">
+                    <div class="card-icon-box yellow mx-auto">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">On the Spot Doubt Solving</h5>
+                    <p class="text-muted small">Get your doubts cleared instantly during lectures so you walk home with complete clarity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Streams Offered Grid (Matching Official Brochure) -->
+<section class="py-5 bg-light">
+    <div class="container py-3">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+            <div>
+                <span class="section-subtitle">Programs & Degrees</span>
+                <h2 class="section-title mb-0">Academic Streams Offered</h2>
+            </div>
+            <a href="/courses" class="btn btn-outline-primary mt-3 mt-md-0 fw-bold">
+                View All Courses <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <div class="row g-4">
+            <!-- Stream 1: School -->
+            <div class="col-lg-4 col-md-6">
+                <div class="custom-card p-4 d-flex flex-column h-100 border-top border-4 border-primary">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="category-badge badge-school">School Section</span>
+                        <span class="badge bg-warning text-dark fw-bold">5th To S.S.C</span>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">School - 5th to S.S.C (SSC Board)</h5>
+                    <p class="text-muted small flex-grow-1">Strong foundation in Mathematics, Science, and English with regular unit tests and special guidance for slow learners.</p>
+                    <div class="bg-light p-2.5 rounded-3 mb-3 small">
+                        <i class="fas fa-check text-success me-1"></i> Board Exam Mock Test Series
+                    </div>
+                    <a href="/admission?course=<%= encodeURIComponent('School - 5th to S.S.C') %>" class="btn btn-yellow w-100 py-2 fw-bold">
+                        Enroll in School Batch <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stream 2: Commerce -->
+            <div class="col-lg-4 col-md-6">
+                <div class="custom-card p-4 d-flex flex-column h-100 border-top border-4 border-warning">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="category-badge badge-commerce">Commerce</span>
+                        <span class="badge bg-warning text-dark fw-bold">Junior & Degrees</span>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Commerce: 11th, 12th, B.Com, BMS & BAF</h5>
+                    <p class="text-muted small flex-grow-1">
+                        FYJC & SYJC (11th & 12th) plus university degree coaching for FY/SY/TY B.Com, BMS, and BAF with expert Accounts problem solving.
+                    </p>
+                    <div class="bg-light p-2.5 rounded-3 mb-3 small">
+                        <i class="fas fa-check text-success me-1"></i> Accounts, Taxation & Management
+                    </div>
+                    <a href="/courses?category=Commerce" class="btn btn-yellow w-100 py-2 fw-bold">
+                        Explore Commerce Courses <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stream 3: Science -->
+            <div class="col-lg-4 col-md-6">
+                <div class="custom-card p-4 d-flex flex-column h-100 border-top border-4 border-success">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="category-badge badge-science">Science</span>
+                        <span class="badge bg-success text-white fw-bold">NEET • JEE • CET</span>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Science: 11th & 12th (NEET/JEE/MH-CET)</h5>
+                    <p class="text-muted small flex-grow-1">In-depth conceptual study in Physics, Chemistry, Maths, and Biology integrated with competitive entrance mock test series.</p>
+                    <div class="bg-light p-2.5 rounded-3 mb-3 small">
+                        <i class="fas fa-check text-success me-1"></i> Dedicated NEET / JEE / CET Coaching
+                    </div>
+                    <a href="/admission?course=<%= encodeURIComponent('Science - FY.J.C & S.Y.J.C (NEET, JEE & MH-CET)') %>" class="btn btn-yellow w-100 py-2 fw-bold">
+                        Enroll in Science Batch <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stream 4: Arts -->
+            <div class="col-lg-6 col-md-6">
+                <div class="custom-card p-4 d-flex flex-column h-100 border-top border-4 border-info">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="category-badge badge-arts">Arts Stream</span>
+                        <span class="badge bg-info text-white fw-bold">FYJC • SYJC • B.A</span>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Arts: 11th, 12th & B.A Degree (FY/SY/TY)</h5>
+                    <p class="text-muted small flex-grow-1">Specialized coaching led by Sir (Graduate in English) covering English Literature, History, Political Science, Economics, and Sociology.</p>
+                    <a href="/admission?course=<%= encodeURIComponent('Arts - FY.J.C (11th) & S.Y.J.C (12th)') %>" class="btn btn-blue w-100 py-2 fw-bold">
+                        Apply for Arts Batch <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stream 5: Professional -->
+            <div class="col-lg-6 col-md-12">
+                <div class="custom-card p-4 d-flex flex-column h-100 border-top border-4 border-danger">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="category-badge badge-professional">Professional</span>
+                        <span class="badge bg-danger text-white fw-bold">CA • CMA • CFA</span>
+                    </div>
+                    <h5 class="fw-bold text-primary mb-2">Professional Courses: CA, CMA & CFA</h5>
+                    <p class="text-muted small flex-grow-1">Elite preparation for Chartered Accountancy, Cost & Management Accounting, and Chartered Financial Analyst programs with personal mentorship.</p>
+                    <a href="/admission?course=<%= encodeURIComponent('Professional Courses: CA, CMA & CFA') %>" class="btn btn-yellow w-100 py-2 fw-bold">
+                        Apply for CA / CMA / CFA <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Official Center Brochure Showcase & Download -->
+<section class="py-5 bg-white border-top border-bottom">
+    <div class="container py-3">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+                <div class="p-2 bg-light rounded-4 shadow border position-relative">
+                    <img src="/images/brochure.jpg" alt="Ansari Tutorial Official Brochure" class="img-fluid rounded-3" style="max-height: 480px; width: 100%; object-fit: contain;">
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <span class="section-subtitle">Official Center Brochure</span>
+                <h2 class="section-title mb-3">Download or View Our Official Pamphlet</h2>
+                <p class="text-muted mb-4" style="line-height: 1.8;">
+                    Ansari Tutorial (Established 2019) is located behind Aqsa Masjid, Opp. Tashkent Bakery Lane, Andheri (West), Mumbai. Check out our official admission pamphlet with all streams, faculty features, and enrollment steps.
+                </p>
+
+                <div class="bg-light p-3 rounded-3 mb-4 border">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="fas fa-map-marked-alt fa-2x text-primary"></i>
+                        <div>
+                            <strong class="text-dark d-block">Center Location:</strong>
+                            <span class="text-muted small">Behind Aqsa Masjid, Opp. Tashkent Bakery Lane, Andheri (West), Mumbai - 400 058.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="/images/brochure.jpg" target="_blank" class="btn btn-yellow btn-lg px-4 py-2.5 fw-bold">
+                        <i class="fas fa-eye me-2"></i> View Full Brochure
+                    </a>
+                    <a href="tel:7666875408" class="btn btn-blue btn-lg px-4 py-2.5 fw-bold">
+                        <i class="fas fa-phone-alt me-2"></i> Call 7666875408
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mentor & Leadership Section (Verified Details) -->
+<section class="py-5 bg-light">
+    <div class="container py-3">
+        <div class="section-header">
+            <span class="section-subtitle">Meet Our Founder</span>
+            <h2 class="section-title">Leadership & Teaching Vision</h2>
+            <p class="section-lead">"Fun + Learning" — Personally mentored by Sir since 2019.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9">
+                <div class="faculty-card text-center p-4 shadow-sm border-top border-4 border-warning">
+                    <div class="faculty-img-wrapper mb-3 rounded-4" style="height: 250px;">
+                        <i class="fas fa-user-tie"></i>
+                        <span class="faculty-tag">Founder & Lead Faculty</span>
+                    </div>
+                    <h3 class="fw-bold text-primary mb-1">Sir (Faisal Ansari)</h3>
+                    <p class="text-warning fw-bold small mb-2">
+                        <i class="fas fa-graduation-cap me-1"></i> Graduate in English | 10th & 12th Pass with Academic Excellence
+                    </p>
+                    <p class="text-muted small mb-3">
+                        Sir founded Ansari Tutorial in 2019 in Andheri (West) with a dedicated commitment to conceptual understanding and patient mentoring for every student, especially those who need extra time to master their subjects.
+                    </p>
+                    <div class="d-flex justify-content-center gap-2 mb-3 flex-wrap">
+                        <span class="badge bg-light text-primary border"><i class="fas fa-language me-1"></i> English Specialist</span>
+                        <span class="badge bg-light text-primary border"><i class="fas fa-smile me-1"></i> Fun + Learning</span>
+                        <span class="badge bg-light text-primary border"><i class="fas fa-heart text-danger me-1"></i> Slow Learners Care</span>
+                    </div>
+                    <a href="/about" class="btn btn-outline-primary btn-sm fw-bold">
+                        Learn More About Our Journey (Est. 2019) <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4-Step Admission Process (From Official Pamphlet) -->
+<section class="py-5 bg-white">
+    <div class="container py-3">
+        <div class="section-header">
+            <span class="section-subtitle">Admission Process</span>
+            <h2 class="section-title">Admission Process in 4 Simple Steps</h2>
+            <p class="section-lead">Begin your journey towards success with ease and transparent guidance.</p>
+        </div>
+
+        <div class="row g-4 text-center">
+            <div class="col-md-3 col-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                    <div class="badge bg-primary rounded-circle fs-4 mb-3 d-inline-flex align-items-center justify-content-center" style="width: 55px; height: 55px;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h6 class="fw-bold text-primary mb-1">1. ENQUIRY</h6>
+                    <p class="text-muted small mb-0">Contact us or visit our centre in Andheri (West).</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                    <div class="badge bg-warning text-dark rounded-circle fs-4 mb-3 d-inline-flex align-items-center justify-content-center" style="width: 55px; height: 55px;">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h6 class="fw-bold text-primary mb-1">2. COUNSELLING</h6>
+                    <p class="text-muted small mb-0">Get guidance as per your goals and stream.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                    <div class="badge bg-primary rounded-circle fs-4 mb-3 d-inline-flex align-items-center justify-content-center" style="width: 55px; height: 55px;">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h6 class="fw-bold text-primary mb-1">3. ADMISSION</h6>
+                    <p class="text-muted small mb-0">Complete your admission with easy payment options.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="p-3 bg-light rounded-4 border h-100">
+                    <div class="badge bg-success rounded-circle fs-4 mb-3 d-inline-flex align-items-center justify-content-center" style="width: 55px; height: 55px;">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h6 class="fw-bold text-primary mb-1">4. START LEARNING</h6>
+                    <p class="text-muted small mb-0">Begin your journey towards success.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/admission" class="btn btn-yellow btn-lg px-5 py-3 fw-bold">
+                <i class="fas fa-paper-plane me-2"></i> Enroll for 2026-27 Session
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Bottom Conversion CTA -->
+<section class="py-5 text-white text-center" style="background: linear-gradient(135deg, #0b224d, #1d4ed8);">
+    <div class="container py-3">
+        <h2 class="display-6 fw-bold mb-2">"It's your time to learn, grow and achieve So, grab the opportunity now."</h2>
+        <p class="lead opacity-75 mb-4 max-w-600 mx-auto">
+            Behind Aqsa Masjid, Opp. Tashkent Bakery Lane, Andheri (West), Mumbai - 400 058.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="tel:7666875408" class="btn btn-yellow btn-lg px-4 py-3 fw-bold">
+                <i class="fas fa-phone-alt me-2"></i> Call: 7666875408
+            </a>
+            <a href="https://wa.me/917666875408?text=Hello%20Ansari%20Tutorial,%20I%20want%20to%20apply%20for%20admission." target="_blank" rel="noopener" class="btn btn-success btn-lg px-4 py-3 fw-bold">
+                <i class="fab fa-whatsapp me-2"></i> WhatsApp: 7666875408
+            </a>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

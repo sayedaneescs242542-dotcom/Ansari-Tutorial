@@ -1,0 +1,135 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<%- include('../partials/messages') %>
+
+<section class="py-4 bg-light min-vh-100">
+    <div class="container py-3">
+        <div class="row g-4">
+            <!-- Sidebar Navigation -->
+            <div class="col-lg-3">
+                <div class="student-sidebar text-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle d-inline-block mb-3" style="width: 70px; height: 70px; line-height: 40px;">
+                        <i class="fas fa-user-graduate fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1 text-primary"><%= student.name %></h5>
+                    <span class="badge bg-warning text-dark fw-bold mb-3"><%= student.course %></span>
+
+                    <ul class="sidebar-menu text-start">
+                        <li><a href="/student/dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                        <li><a href="/student/profile"><i class="fas fa-user-edit"></i> My Profile</a></li>
+                        <li><a href="/student/admission-details"><i class="fas fa-file-invoice"></i> Admission Status</a></li>
+                        <li><a href="/announcements"><i class="fas fa-bullhorn"></i> Notice Board</a></li>
+                        <li><a href="/student/logout" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dashboard Main Content -->
+            <div class="col-lg-9">
+                <!-- Welcome Banner -->
+                <div class="bg-primary bg-gradient text-white p-4 rounded-4 shadow-sm mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="fw-bold mb-1">Welcome back, <%= student.name.split(' ')[0] %>! 👋</h2>
+                        <p class="mb-0 opacity-75">Enrolled Course: <strong><%= student.course %></strong></p>
+                    </div>
+                    <a href="/student/profile" class="btn btn-yellow fw-bold d-none d-md-inline-block">Edit Profile</a>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <div class="kpi-card">
+                            <div>
+                                <span class="kpi-label">Admission Status</span>
+                                <h5 class="fw-bold mb-0 mt-1">
+                                    <% if (student.admissionStatus === 'Approved') { %>
+                                        <span class="badge status-approved"><i class="fas fa-check-circle me-1"></i> Approved</span>
+                                    <% } else if (student.admissionStatus === 'Rejected') { %>
+                                        <span class="badge status-rejected"><i class="fas fa-times-circle me-1"></i> Rejected</span>
+                                    <% } else { %>
+                                        <span class="badge status-pending"><i class="fas fa-hourglass-half me-1"></i> Pending</span>
+                                    <% } %>
+                                </h5>
+                            </div>
+                            <i class="fas fa-file-alt fa-2x text-primary opacity-50"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="kpi-card">
+                            <div>
+                                <span class="kpi-label">Batch Timing</span>
+                                <h6 class="fw-bold text-dark mb-0 mt-1">Morning / Evening</h6>
+                            </div>
+                            <i class="fas fa-clock fa-2x text-warning opacity-50"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="kpi-card">
+                            <div>
+                                <span class="kpi-label">Contact Support</span>
+                                <h6 class="fw-bold text-dark mb-0 mt-1">7666875408 / 9022420050</h6>
+                            </div>
+                            <i class="fas fa-headset fa-2x text-primary opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Summary & Announcements Feed -->
+                <div class="row g-4">
+                    <div class="col-md-7">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                            <h5 class="fw-bold text-primary mb-3"><i class="fas fa-book-open me-2 text-warning"></i> Enrolled Program Details</h5>
+                            <% if (courseDetail) { %>
+                                <p class="text-muted small mb-3"><%= courseDetail.description %></p>
+                                <div class="bg-light p-3 rounded-3 mb-3">
+                                    <div class="d-flex justify-content-between small mb-1">
+                                        <span class="text-muted">Category:</span>
+                                        <strong class="text-dark"><%= courseDetail.category %></strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between small">
+                                        <span class="text-muted">Duration:</span>
+                                        <strong class="text-dark"><%= courseDetail.duration %></strong>
+                                    </div>
+                                </div>
+
+                                <h6 class="fw-bold small text-dark mb-2">Subjects Included:</h6>
+                                <div class="d-flex flex-wrap gap-1">
+                                    <% courseDetail.subjects.forEach(function(s) { %>
+                                        <span class="badge bg-light text-primary border"><%= s %></span>
+                                    <% }); %>
+                                </div>
+                            <% } else { %>
+                                <p class="text-muted">Program details for <strong><%= student.course %></strong>.</p>
+                            <% } %>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+                            <h5 class="fw-bold text-primary mb-3"><i class="fas fa-bell me-2 text-warning"></i> Recent Notices</h5>
+                            <% if (announcements && announcements.length > 0) { %>
+                                <% announcements.slice(0, 3).forEach(function(notice) { %>
+                                    <div class="border-bottom pb-2 mb-2">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="badge bg-primary small" style="font-size: 0.65rem;"><%= notice.category %></span>
+                                            <small class="text-muted" style="font-size: 0.7rem;"><%= new Date(notice.createdAt).toLocaleDateString() %></small>
+                                        </div>
+                                        <h6 class="fw-bold mb-1 mt-1 small"><%= notice.title %></h6>
+                                        <p class="text-muted small mb-0 text-truncate"><%= notice.content %></p>
+                                    </div>
+                                <% }); %>
+                            <% } else { %>
+                                <p class="text-muted small">No announcements posted yet.</p>
+                            <% } %>
+                            <a href="/announcements" class="btn btn-link btn-sm p-0 mt-2 text-primary fw-semibold">View All Notices &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

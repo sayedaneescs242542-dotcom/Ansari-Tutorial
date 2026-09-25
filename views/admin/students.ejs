@@ -1,0 +1,231 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<%- include('../partials/messages') %>
+
+<section class="py-4 bg-light min-vh-100">
+    <div class="container py-3">
+        <div class="row g-4">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="admin-sidebar text-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle d-inline-block mb-3" style="width: 70px; height: 70px; line-height: 40px;">
+                        <i class="fas fa-user-shield fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1 text-primary"><%= admin.name %></h5>
+                    <span class="badge bg-danger fw-bold mb-3"><%= admin.role %></span>
+
+                    <ul class="sidebar-menu text-start">
+                        <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="/admin/admissions"><i class="fas fa-file-signature"></i> Admissions</a></li>
+                        <li><a href="/admin/students" class="active"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+                        <li><a href="/admin/courses"><i class="fas fa-book"></i> Manage Courses</a></li>
+                        <li><a href="/admin/announcements"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+                        <li><a href="/admin/contacts"><i class="fas fa-envelope-open-text"></i> Contact Enquiries</a></li>
+                        <li><a href="/admin/logout" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Manage Students Content -->
+            <div class="col-lg-9">
+                <div class="custom-table-container p-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                        <div>
+                            <h3 class="fw-bold text-primary mb-0">Student Registry</h3>
+                            <small class="text-muted">Total Enrolled Students: <%= students.length %></small>
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            <input type="text" class="form-control table-search-input" data-table="studentsTable" placeholder="Search by name, email or course...">
+                            <button class="btn btn-yellow fw-bold flex-shrink-0" data-bs-toggle="modal" data-bs-target="#addStudentModal">
+                                <i class="fas fa-user-plus me-1"></i> Add Student
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0" id="studentsTable">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Email & Phone</th>
+                                    <th>Course</th>
+                                    <th>Status</th>
+                                    <th>Joined Date</th>
+                                    <th class="text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (students && students.length > 0) { %>
+                                    <% students.forEach(function(st) { %>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-dark"><%= st.name %></strong>
+                                                <% if (st.gender) { %>
+                                                    <small class="text-muted d-block"><%= st.gender %></small>
+                                                <% } %>
+                                            </td>
+                                            <td>
+                                                <small class="d-block text-dark fw-semibold"><%= st.email %></small>
+                                                <small class="text-muted"><%= st.phone %></small>
+                                            </td>
+                                            <td><span class="badge bg-primary"><%= st.course %></span></td>
+                                            <td>
+                                                <% if (st.admissionStatus === 'Approved') { %>
+                                                    <span class="badge status-approved">Approved</span>
+                                                <% } else if (st.admissionStatus === 'Rejected') { %>
+                                                    <span class="badge status-rejected">Rejected</span>
+                                                <% } else { %>
+                                                    <span class="badge status-pending">Pending</span>
+                                                <% } %>
+                                            </td>
+                                            <td><small class="text-muted"><%= new Date(st.createdAt).toLocaleDateString() %></small></td>
+                                            <td class="text-end">
+                                                <button class="btn btn-sm btn-outline-primary me-1" 
+                                                        data-bs-toggle="modal" 
+                                                        data-bs-target="#editStudentModal"
+                                                        data-id="<%= st._id %>"
+                                                        data-name="<%= st.name %>"
+                                                        data-email="<%= st.email %>"
+                                                        data-phone="<%= st.phone %>"
+                                                        data-course="<%= st.course %>"
+                                                        data-status="<%= st.admissionStatus %>"
+                                                        data-address="<%= st.address %>">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                                <form action="/admin/students/delete/<%= st._id %>" method="POST" class="d-inline">
+                                                    <button type="submit" class="btn btn-sm btn-outline-danger btn-delete-confirm">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="6" class="text-center py-4 text-muted">No students registered in database yet.</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add Student Modal -->
+<div class="modal fade" id="addStudentModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title fw-bold"><i class="fas fa-user-plus me-2"></i> Add New Student</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form action="/admin/students/add" method="POST">
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Full Name *</label>
+                            <input type="text" name="name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Email Address *</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Password *</label>
+                            <input type="password" name="password" class="form-control" placeholder="Default password" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Mobile Phone *</label>
+                            <input type="tel" name="phone" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Course *</label>
+                            <select name="course" class="form-select" required>
+                                <% courses.forEach(function(c) { %>
+                                    <option value="<%= c.title %>"><%= c.title %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Gender</label>
+                            <select name="gender" class="form-select">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Address</label>
+                            <textarea name="address" rows="2" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-yellow fw-bold">Save Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Student Modal -->
+<div class="modal fade" id="editStudentModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title fw-bold"><i class="fas fa-edit me-2"></i> Edit Student Information</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form action="/admin/students/edit" method="POST">
+                <input type="hidden" name="id" id="edit-student-id">
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" name="name" id="edit-student-name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Email Address</label>
+                            <input type="email" name="email" id="edit-student-email" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Phone Number</label>
+                            <input type="tel" name="phone" id="edit-student-phone" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Course</label>
+                            <select name="course" id="edit-student-course" class="form-select" required>
+                                <% courses.forEach(function(c) { %>
+                                    <option value="<%= c.title %>"><%= c.title %></option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Admission Status</label>
+                            <select name="admissionStatus" id="edit-student-status" class="form-select">
+                                <option value="Pending">Pending</option>
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Address</label>
+                            <textarea name="address" id="edit-student-address" rows="2" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-blue fw-bold">Update Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

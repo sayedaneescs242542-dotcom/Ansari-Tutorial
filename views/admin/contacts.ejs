@@ -1,0 +1,108 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<%- include('../partials/messages') %>
+
+<section class="py-4 bg-light min-vh-100">
+    <div class="container py-3">
+        <div class="row g-4">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="admin-sidebar text-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle d-inline-block mb-3" style="width: 70px; height: 70px; line-height: 40px;">
+                        <i class="fas fa-user-shield fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1 text-primary"><%= admin.name %></h5>
+                    <span class="badge bg-danger fw-bold mb-3"><%= admin.role %></span>
+
+                    <ul class="sidebar-menu text-start">
+                        <li><a href="/admin/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="/admin/admissions"><i class="fas fa-file-signature"></i> Admissions</a></li>
+                        <li><a href="/admin/students"><i class="fas fa-user-graduate"></i> Manage Students</a></li>
+                        <li><a href="/admin/courses"><i class="fas fa-book"></i> Manage Courses</a></li>
+                        <li><a href="/admin/announcements"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+                        <li><a href="/admin/contacts" class="active"><i class="fas fa-envelope-open-text"></i> Contact Enquiries</a></li>
+                        <li><a href="/admin/logout" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Manage Contact Enquiries Content -->
+            <div class="col-lg-9">
+                <div class="custom-table-container p-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                        <div>
+                            <h3 class="fw-bold text-primary mb-0">Contact Inquiries Registry</h3>
+                            <small class="text-muted">Total Enquiries Received: <%= contacts.length %></small>
+                        </div>
+                        
+                        <div>
+                            <input type="text" class="form-control table-search-input" data-table="contactsTable" placeholder="Search sender, subject or email...">
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0" id="contactsTable">
+                            <thead>
+                                <tr>
+                                    <th>Sender Details</th>
+                                    <th>Subject</th>
+                                    <th>Message Body</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th class="text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (contacts && contacts.length > 0) { %>
+                                    <% contacts.forEach(function(ct) { %>
+                                        <tr>
+                                            <td>
+                                                <strong class="text-dark"><%= ct.name %></strong><br>
+                                                <small class="text-muted"><%= ct.email %></small><br>
+                                                <small class="text-primary"><i class="fas fa-phone me-1"></i><%= ct.phone %></small>
+                                            </td>
+                                            <td><span class="badge bg-light text-dark border"><%= ct.subject %></span></td>
+                                            <td>
+                                                <p class="small text-muted mb-0" style="max-width: 250px;"><%= ct.message %></p>
+                                            </td>
+                                            <td><small class="text-muted"><%= new Date(ct.createdAt).toLocaleDateString() %></small></td>
+                                            <td>
+                                                <% if (ct.status === 'Replied') { %>
+                                                    <span class="badge status-approved"><i class="fas fa-check me-1"></i> Replied</span>
+                                                <% } else { %>
+                                                    <span class="badge status-pending"><i class="fas fa-envelope me-1"></i> New</span>
+                                                <% } %>
+                                            </td>
+                                            <td class="text-end">
+                                                <div class="d-inline-flex gap-1">
+                                                    <% if (ct.status === 'New') { %>
+                                                        <form action="/admin/contacts/reply/<%= ct._id %>" method="POST" class="d-inline">
+                                                            <button type="submit" class="btn btn-sm btn-success" title="Mark as Replied">
+                                                                <i class="fas fa-check"></i>
+                                                            </button>
+                                                        </form>
+                                                    <% } %>
+                                                    <form action="/admin/contacts/delete/<%= ct._id %>" method="POST" class="d-inline">
+                                                        <button type="submit" class="btn btn-sm btn-outline-danger btn-delete-confirm">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="6" class="text-center py-4 text-muted">No contact inquiries stored yet.</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

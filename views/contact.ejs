@@ -1,0 +1,142 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+<%- include('partials/messages') %>
+
+<!-- Page Header Hero -->
+<section class="py-5 bg-primary text-white position-relative" style="background: linear-gradient(135deg, #07193b 0%, #0b224d 100%);">
+    <div class="container py-3 text-center">
+        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 text-uppercase">
+            <i class="fas fa-map-marker-alt me-1"></i> Andheri (West), Mumbai
+        </span>
+        <h1 class="display-5 fw-bold mb-2">Contact Ansari Tutorial</h1>
+        <p class="lead opacity-75 max-w-700 mx-auto">
+            "It's your time to learn, grow and achieve So, grab the opportunity now."
+        </p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5 bg-light">
+    <div class="container py-2">
+        <div class="row g-5">
+            <!-- Left: Office & Contact Info -->
+            <div class="col-lg-5">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border h-100">
+                    <span class="section-subtitle">Visit Our Center</span>
+                    <h3 class="fw-bold text-primary mb-4">We are here to guide your academic future!</h3>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="card-icon-box m-0 flex-shrink-0" style="width: 48px; height: 48px;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Center Address</h6>
+                            <p class="text-dark small fw-semibold mb-1">Behind Aqsa Masjid, Opp. Tashkent Bakery Lane, Andheri (West), Mumbai - 400 058.</p>
+                            <small class="text-primary fw-semibold"><i class="fas fa-landmark me-1"></i> Landmark: Behind Aqsa Masjid / Opp. Tashkent Bakery Lane</small>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="card-icon-box yellow m-0 flex-shrink-0" style="width: 48px; height: 48px;">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Contact Numbers</h6>
+                            <p class="text-muted small mb-1">
+                                <a href="tel:7666875408" class="text-dark fw-bold fs-6">7666875408</a> &nbsp;|&nbsp; 
+                                <a href="tel:9022420050" class="text-dark fw-bold fs-6">9022420050</a>
+                            </p>
+                            <small class="text-success"><i class="fas fa-clock me-1"></i> Monday to Saturday: 8:00 AM - 9:30 PM</small>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="card-icon-box m-0 flex-shrink-0" style="width: 48px; height: 48px; background: rgba(37, 211, 102, 0.15); color: #25d366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">WhatsApp Quick Support</h6>
+                            <p class="text-muted small mb-1">
+                                Direct messaging for free demo class booking and batch schedule.
+                            </p>
+                            <a href="https://wa.me/917666875408?text=Hello%20Sir,%20I%20want%20information%20regarding%20Ansari%20Tutorial." target="_blank" rel="noopener" class="text-success fw-bold small">
+                                Chat on WhatsApp (7666875408) &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="card-icon-box yellow m-0 flex-shrink-0" style="width: 48px; height: 48px;">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Founder & Lead Faculty</h6>
+                            <p class="text-muted small mb-0">Sir (Graduate in English) - Est. 2019</p>
+                            <small class="text-muted">Available for personal counseling and demo class orientation</small>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-top">
+                        <a href="https://wa.me/917666875408?text=Hello%20Ansari%20Tutorial,%20I%20want%20to%20visit%20the%20center." target="_blank" rel="noopener" class="btn btn-success w-100 fw-bold py-2.5">
+                            <i class="fab fa-whatsapp me-2"></i> Message on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Inquiry Form -->
+            <div class="col-lg-7">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                    <h4 class="fw-bold text-primary mb-2"><i class="fas fa-paper-plane me-2 text-warning"></i> Send an Enquiry or Book Free Demo</h4>
+                    <p class="text-muted small mb-4">Leave your details below and our team will get in touch with you shortly.</p>
+
+                    <form action="/contact" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" name="name" class="form-control" placeholder="Student or Parent Name" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" name="email" class="form-control" placeholder="name@gmail.com" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Contact Number <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" name="phone" class="form-control" placeholder="10-digit Phone Number" required pattern="[0-9]{10}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Course / Stream Interested <span class="text-danger">*</span></label>
+                                <input type="text" name="subject" class="form-control" placeholder="e.g. 10th SSC / 12th Commerce / B.Com / NEET" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Your Questions / Message <span class="text-danger">*</span></label>
+                                <textarea name="message" rows="4" class="form-control" placeholder="Ask about batch timings, free demo lecture, or fee payment options..." required></textarea>
+                            </div>
+
+                            <div class="col-12 mt-4 text-end">
+                                <button type="submit" class="btn btn-blue btn-lg px-5 py-3 fw-bold">
+                                    Submit Inquiry <i class="fas fa-paper-plane ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

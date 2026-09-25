@@ -1,0 +1,133 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+<%- include('partials/messages') %>
+
+<!-- Page Header Hero -->
+<section class="py-5 bg-primary text-white position-relative" style="background: linear-gradient(135deg, #07193b 0%, #0b224d 100%);">
+    <div class="container py-3 text-center">
+        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 text-uppercase">
+            <i class="fas fa-star me-1"></i> FUN + LEARNING • ALL STREAMS & DEGREES
+        </span>
+        <h1 class="display-5 fw-bold mb-2">Our Academic Programs & Courses</h1>
+        <p class="lead opacity-75 max-w-700 mx-auto">
+            "It's your time to learn, grow and achieve So, grab the opportunity now."
+        </p>
+    </div>
+</section>
+
+<!-- Courses Catalog Section -->
+<section class="py-5 bg-light">
+    <div class="container py-2">
+        <!-- Category Filter Buttons -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+            <a href="/courses?category=All" class="btn <%= currentCategory === 'All' ? 'btn-blue' : 'btn-outline-primary bg-white' %> px-4 py-2 rounded-pill fw-semibold">
+                <i class="fas fa-th-large me-1"></i> All Streams
+            </a>
+            <a href="/courses?category=School" class="btn <%= currentCategory === 'School' ? 'btn-blue' : 'btn-outline-primary bg-white' %> px-4 py-2 rounded-pill fw-semibold">
+                <i class="fas fa-school me-1"></i> School (5th to S.S.C)
+            </a>
+            <a href="/courses?category=Commerce" class="btn <%= currentCategory === 'Commerce' ? 'btn-blue' : 'btn-outline-primary bg-white' %> px-4 py-2 rounded-pill fw-semibold">
+                <i class="fas fa-chart-line me-1"></i> Commerce & Degrees (B.Com, BMS, BAF)
+            </a>
+            <a href="/courses?category=Science" class="btn <%= currentCategory === 'Science' ? 'btn-blue' : 'btn-outline-primary bg-white' %> px-4 py-2 rounded-pill fw-semibold">
+                <i class="fas fa-atom me-1"></i> Science (NEET / JEE / MH-CET)
+            </a>
+            <a href="/courses?category=Arts" class="btn <%= currentCategory === 'Arts' ? 'btn-blue' : 'btn-outline-primary bg-white' %> px-4 py-2 rounded-pill fw-semibold">
+                <i class="fas fa-landmark me-1"></i> Arts & B.A. Degree
+            </a>
+            <a href="/courses?category=Professional" class="btn <%= currentCategory === 'Professional' ? 'btn-blue' : 'btn-outline-primary bg-white' %> px-4 py-2 rounded-pill fw-semibold">
+                <i class="fas fa-user-tie me-1"></i> CA, CMA & CFA
+            </a>
+        </div>
+
+        <!-- Course Cards Grid -->
+        <div class="row g-4">
+            <% if (typeof courses !== 'undefined' && courses && courses.length > 0) { %>
+                <% courses.forEach(function(course) { %>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="custom-card p-4 d-flex flex-column h-100 border-top border-4 border-primary">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="category-badge badge-<%= course.category.toLowerCase() %>"><%= course.category %></span>
+                                <span class="badge bg-warning text-dark fw-bold"><%= course.highlightBadge %></span>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="card-icon-box m-0" style="width: 48px; height: 48px;">
+                                    <i class="<%= course.iconClass || 'fas fa-graduation-cap' %>"></i>
+                                </div>
+                                <h5 class="fw-bold text-primary mb-0"><%= course.title %></h5>
+                            </div>
+
+                            <p class="text-muted small flex-grow-1"><%= course.description %></p>
+
+                            <!-- Key Subjects -->
+                            <% if (course.subjects && course.subjects.length > 0) { %>
+                                <div class="mb-3">
+                                    <small class="fw-bold text-dark d-block mb-1.5"><i class="fas fa-book-reader me-1 text-primary"></i> Key Curriculum Subjects:</small>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <% course.subjects.forEach(function(subj) { %>
+                                            <span class="badge bg-light text-dark border small"><%= subj %></span>
+                                        <% }); %>
+                                    </div>
+                                </div>
+                            <% } %>
+
+                            <!-- Duration & Fee Info -->
+                            <div class="bg-light p-3 rounded-3 mb-3 border">
+                                <div class="d-flex justify-content-between small text-muted mb-1">
+                                    <span><i class="far fa-clock me-1 text-primary"></i> Course Duration:</span>
+                                    <strong class="text-dark"><%= course.duration %></strong>
+                                </div>
+                                <div class="d-flex justify-content-between small text-muted">
+                                    <span><i class="fas fa-hand-holding-usd me-1 text-success"></i> Fee Option:</span>
+                                    <strong class="text-success"><%= course.fee %></strong>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <a href="/admission?course=<%= encodeURIComponent(course.title) %>" class="btn btn-yellow w-100 py-2.5 fw-bold">
+                                    Apply for Admission <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                                <a href="https://wa.me/917666875408?text=Hello%20Sir,%20I%20want%20details%20for%20<%= encodeURIComponent(course.title) %>" target="_blank" rel="noopener" class="btn btn-outline-success py-2.5 px-3" title="Inquire on WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <div class="col-12 text-center py-5">
+                    <div class="p-5 bg-white rounded-4 border shadow-sm max-w-500 mx-auto">
+                        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                        <h4 class="fw-bold">No Courses Found</h4>
+                        <p class="text-muted">There are no courses listed under this stream category currently.</p>
+                        <a href="/courses?category=All" class="btn btn-blue">View All Streams</a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- Official Brochure Section -->
+<section class="py-5 bg-white border-top">
+    <div class="container py-2">
+        <div class="bg-light p-4 p-md-5 rounded-4 border d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+            <div>
+                <span class="badge bg-warning text-dark px-3 py-1.5 rounded-pill mb-2 fw-bold">Center Pamphlet</span>
+                <h3 class="fw-bold text-primary mb-2">Want to see all course streams & features at a glance?</h3>
+                <p class="text-muted mb-0">View our official center brochure with full curriculum, fee benefits, and admission steps.</p>
+            </div>
+            <div class="d-flex gap-2 flex-shrink-0">
+                <a href="/images/brochure.jpg" target="_blank" class="btn btn-yellow btn-lg px-4 py-3 fw-bold">
+                    <i class="fas fa-eye me-2"></i> View Brochure
+                </a>
+                <a href="/contact" class="btn btn-blue btn-lg px-4 py-3 fw-bold">
+                    <i class="fas fa-phone-alt me-2"></i> Contact Center
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

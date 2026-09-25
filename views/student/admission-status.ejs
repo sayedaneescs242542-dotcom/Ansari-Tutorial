@@ -1,0 +1,83 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+<%- include('../partials/messages') %>
+
+<section class="py-4 bg-light min-vh-100">
+    <div class="container py-3">
+        <div class="row g-4">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="student-sidebar text-center mb-4">
+                    <div class="bg-primary text-white p-3 rounded-circle d-inline-block mb-3" style="width: 70px; height: 70px; line-height: 40px;">
+                        <i class="fas fa-user-graduate fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1 text-primary"><%= student.name %></h5>
+                    <span class="badge bg-warning text-dark fw-bold mb-3"><%= student.course %></span>
+
+                    <ul class="sidebar-menu text-start">
+                        <li><a href="/student/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                        <li><a href="/student/profile"><i class="fas fa-user-edit"></i> My Profile</a></li>
+                        <li><a href="/student/admission-details" class="active"><i class="fas fa-file-invoice"></i> Admission Status</a></li>
+                        <li><a href="/announcements"><i class="fas fa-bullhorn"></i> Notice Board</a></li>
+                        <li><a href="/student/logout" class="text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Admission Status Content -->
+            <div class="col-lg-9">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                    <h4 class="fw-bold text-primary mb-4"><i class="fas fa-file-signature me-2 text-warning"></i> Online Admission Details</h4>
+
+                    <% if (admission) { %>
+                        <div class="alert p-4 rounded-4 mb-4 border d-flex align-items-center justify-content-between <%= admission.status === 'Approved' ? 'alert-success border-success' : admission.status === 'Rejected' ? 'alert-danger border-danger' : 'alert-warning border-warning' %>">
+                            <div>
+                                <h5 class="fw-bold mb-1">
+                                    Application Status: <%= admission.status %>
+                                </h5>
+                                <p class="mb-0 small"><%= admission.remarks %></p>
+                            </div>
+                            <span class="fs-1">
+                                <% if (admission.status === 'Approved') { %><i class="fas fa-check-circle text-success"></i><% } else if (admission.status === 'Rejected') { %><i class="fas fa-times-circle text-danger"></i><% } else { %><i class="fas fa-hourglass-half text-warning"></i><% } %>
+                            </span>
+                        </div>
+
+                        <div class="row g-3 bg-light p-4 rounded-4 border">
+                            <div class="col-md-6">
+                                <small class="text-muted d-block">Application ID</small>
+                                <strong class="text-dark"><%= admission._id %></strong>
+                            </div>
+                            <div class="col-md-6">
+                                <small class="text-muted d-block">Applied Date</small>
+                                <strong class="text-dark"><%= new Date(admission.createdAt).toLocaleDateString() %></strong>
+                            </div>
+                            <div class="col-md-6">
+                                <small class="text-muted d-block">Student Name</small>
+                                <strong class="text-dark"><%= admission.fullName %></strong>
+                            </div>
+                            <div class="col-md-6">
+                                <small class="text-muted d-block">Applied Course & Stream</small>
+                                <strong class="text-dark"><%= admission.course %> (<%= admission.stream %>)</strong>
+                            </div>
+                            <div class="col-md-6">
+                                <small class="text-muted d-block">Parent Contact</small>
+                                <strong class="text-dark"><%= admission.parentPhone %></strong>
+                            </div>
+                            <div class="col-md-6">
+                                <small class="text-muted d-block">Previous Percentage</small>
+                                <strong class="text-dark"><%= admission.previousPercentage %>%</strong>
+                            </div>
+                        </div>
+                    <% } else { %>
+                        <div class="text-center py-4">
+                            <p class="text-muted">No online admission form record found for this email address.</p>
+                            <a href="/admission" class="btn btn-yellow fw-bold">Fill Online Admission Form Now</a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer') %>

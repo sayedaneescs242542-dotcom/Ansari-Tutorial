@@ -1,0 +1,19 @@
+<% if (success) { %>
+    <div class="container mt-3">
+        <div class="alert alert-success alert-dismissible fade show border-0 shadow-sm rounded-3 d-flex align-items-center gap-2" role="alert">
+            <i class="fas fa-check-circle fa-lg"></i>
+            <div><%= success %></div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<% } %>
+
+<% if (error) { %>
+    <div class="container mt-3">
+        <div class="alert alert-danger alert-dismissible fade show border-0 shadow-sm rounded-3 d-flex align-items-center gap-2" role="alert">
+            <i class="fas fa-exclamation-triangle fa-lg"></i>
+            <div><%= error %></div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<% } %>

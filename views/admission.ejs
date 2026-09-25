@@ -1,0 +1,266 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+<%- include('partials/messages') %>
+
+<!-- Page Hero Header -->
+<section class="py-5 bg-primary text-white position-relative" style="background: linear-gradient(135deg, #07193b 0%, #0b224d 100%);">
+    <div class="container py-3 text-center">
+        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 text-uppercase">
+            <i class="fas fa-star me-1"></i> FUN + LEARNING • ADMISSION OPEN FOR 2026-27
+        </span>
+        <h1 class="display-5 fw-bold mb-2">Online Admission Application</h1>
+        <p class="lead opacity-75 max-w-700 mx-auto">
+            "It's your time to learn, grow and achieve So, grab the opportunity now."
+        </p>
+    </div>
+</section>
+
+<!-- Application Guide Steps (Direct from Official Brochure) -->
+<section class="py-4 bg-white border-bottom">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <div class="badge bg-primary rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">1</div>
+                    <div class="text-start">
+                        <h6 class="fw-bold mb-0 text-primary small">1. ENQUIRY</h6>
+                        <small class="text-muted" style="font-size: 11px;">Contact us or visit centre</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <div class="badge bg-warning text-dark rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">2</div>
+                    <div class="text-start">
+                        <h6 class="fw-bold mb-0 text-primary small">2. COUNSELLING</h6>
+                        <small class="text-muted" style="font-size: 11px;">Guidance per your goals</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <div class="badge bg-primary rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">3</div>
+                    <div class="text-start">
+                        <h6 class="fw-bold mb-0 text-primary small">3. ADMISSION</h6>
+                        <small class="text-muted" style="font-size: 11px;">Complete enrollment</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <div class="badge bg-success rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">4</div>
+                    <div class="text-start">
+                        <h6 class="fw-bold mb-0 text-primary small">4. START LEARNING</h6>
+                        <small class="text-muted" style="font-size: 11px;">Fun + Learning begins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Admission Form Section -->
+<section class="py-5 bg-light">
+    <div class="container py-2">
+        <div class="row g-4">
+            <!-- Left: Form Container -->
+            <div class="col-lg-8">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                    <div class="d-flex align-items-center justify-content-between pb-3 mb-4 border-bottom">
+                        <div>
+                            <h4 class="fw-bold text-primary mb-1"><i class="fas fa-file-signature me-2 text-warning"></i> Student Admission Form</h4>
+                            <small class="text-muted">Fields marked with <span class="text-danger">*</span> are required</small>
+                        </div>
+                        <span class="badge bg-warning text-dark fw-bold px-3 py-2">Free Demo Class Included</span>
+                    </div>
+
+                    <form action="/admission" method="POST">
+                        <!-- Step 1: Student Information -->
+                        <h6 class="fw-bold text-secondary text-uppercase mb-3 pb-2 border-bottom" style="font-size: 13px; letter-spacing: 0.5px;">
+                            <i class="fas fa-user me-1 text-primary"></i> 1. Student & Contact Information
+                        </h6>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Full Student Name <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" name="fullName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" name="email" class="form-control" placeholder="student@gmail.com" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Student Mobile No. <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" name="phone" class="form-control" placeholder="10-digit Mobile Number" required pattern="[0-9]{10}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Parent / Guardian Contact <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user-shield"></i></span>
+                                    <input type="tel" name="parentPhone" class="form-control" placeholder="Parent Mobile Number" required pattern="[0-9]{10}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Gender <span class="text-danger">*</span></label>
+                                <select name="gender" class="form-select" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                                <input type="date" name="dob" class="form-control" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Residential Address <span class="text-danger">*</span></label>
+                                <textarea name="address" rows="2" class="form-control" placeholder="Building, Street, Area, City, Pin code" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Academic Program Selection -->
+                        <h6 class="fw-bold text-secondary text-uppercase mb-3 pb-2 border-bottom" style="font-size: 13px; letter-spacing: 0.5px;">
+                            <i class="fas fa-graduation-cap me-1 text-primary"></i> 2. Academic Stream & Course Applied For
+                        </h6>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-8">
+                                <label class="form-label">Select Course / Program <span class="text-danger">*</span></label>
+                                <select name="course" class="form-select" required>
+                                    <option value="">-- Choose Academic Course --</option>
+                                    <optgroup label="School Section">
+                                        <option value="School - 5th to S.S.C" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('5th') ? 'selected' : '' %>>School - 5th to S.S.C (SSC Board)</option>
+                                    </optgroup>
+                                    <optgroup label="Commerce & Degree Courses">
+                                        <option value="Commerce - FY.J.C (11th) & S.Y.J.C (12th)" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('Commerce') && selectedCourse.includes('11th') ? 'selected' : '' %>>Commerce - FY.J.C (11th) & S.Y.J.C (12th)</option>
+                                        <option value="B.Com Degree (FY, SY & TY B.com)" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('B.Com') ? 'selected' : '' %>>B.Com Degree (FY, SY & TY B.com)</option>
+                                        <option value="BMS Degree (FY, SY & TY B.MS)" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('BMS') ? 'selected' : '' %>>BMS Degree (FY, SY & TY B.MS)</option>
+                                        <option value="BAF Degree (FY, SY & TY B.AF)" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('BAF') ? 'selected' : '' %>>BAF Degree (FY, SY & TY B.AF)</option>
+                                    </optgroup>
+                                    <optgroup label="Science Stream">
+                                        <option value="Science - FY.J.C & S.Y.J.C (NEET, JEE & MH-CET)" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('Science') ? 'selected' : '' %>>Science - FY.J.C & S.Y.J.C (NEET, JEE & MH-CET)</option>
+                                    </optgroup>
+                                    <optgroup label="Arts Stream & Degree">
+                                        <option value="Arts - FY.J.C (11th) & S.Y.J.C (12th)" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('Arts') && selectedCourse.includes('11th') ? 'selected' : '' %>>Arts - FY.J.C (11th) & S.Y.J.C (12th)</option>
+                                        <option value="B.A Degree (FY.B.A, S.Y.B.A, TY.B.A)" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('B.A') ? 'selected' : '' %>>B.A Degree (FY.B.A, S.Y.B.A, TY.B.A)</option>
+                                    </optgroup>
+                                    <optgroup label="Professional Courses">
+                                        <option value="Professional Courses: CA, CMA & CFA" <%= typeof selectedCourse !== 'undefined' && selectedCourse.includes('CA') ? 'selected' : '' %>>Professional Courses: CA, CMA & CFA</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Previous Marks (%) <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                                    <input type="number" step="0.01" min="0" max="100" name="previousPercentage" class="form-control" placeholder="e.g. 75.5" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Attention Note -->
+                        <div class="p-3 bg-light rounded-3 mb-4 border d-flex align-items-center gap-3">
+                            <i class="fas fa-heart text-danger fs-3"></i>
+                            <div class="small">
+                                <strong class="text-dark">Special Attention to Slow Learners:</strong>
+                                <span class="text-muted d-block">We tailor our pace to ensure concept clarity for every student. Let us know during counseling if you require special assistance in any subject.</span>
+                            </div>
+                        </div>
+
+                        <!-- Declaration -->
+                        <div class="bg-light p-3 rounded-3 mb-4 border">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                <label class="form-check-label small text-muted" for="termsCheck">
+                                    I declare that the information provided in this admission form is accurate. I agree to abide by the academic guidance and rules of <strong>Ansari Tutorial</strong>.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="small text-muted"><i class="fas fa-lock me-1"></i> Data encrypted & secure</span>
+                            <button type="submit" class="btn btn-yellow btn-lg px-5 py-3 fw-bold">
+                                <i class="fas fa-paper-plane me-2"></i> Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right: Center Help & Contact Box -->
+            <div class="col-lg-4">
+                <div class="d-flex flex-column gap-4">
+                    <!-- Admission Desk Card -->
+                    <div class="bg-white p-4 rounded-4 shadow-sm border">
+                        <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom">
+                            <div class="brand-icon-box" style="width: 44px; height: 44px; font-size: 20px;">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-0">Admission Help Desk</h6>
+                                <small class="text-muted">7666875408 / 9022420050</small>
+                            </div>
+                        </div>
+                        <p class="small text-muted mb-3">
+                            Behind Aqsa Masjid, Opp. Tashkent Bakery Lane, Andheri (West), Mumbai - 400 058.
+                        </p>
+                        <a href="tel:7666875408" class="btn btn-outline-primary btn-sm w-100 mb-2 fw-semibold">
+                            <i class="fas fa-phone-alt me-1"></i> Call: 7666875408
+                        </a>
+                        <a href="https://wa.me/917666875408?text=Hello%20Ansari%20Tutorial,%20I%20want%20to%20apply%20for%20admission." target="_blank" rel="noopener" class="btn btn-success btn-sm w-100 fw-semibold">
+                            <i class="fab fa-whatsapp me-1"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Payment & Fee Highlights -->
+                    <div class="bg-white p-4 rounded-4 shadow-sm border">
+                        <h6 class="fw-bold text-primary mb-3">
+                            <i class="fas fa-hand-holding-usd text-warning me-2"></i> Affordable Fees
+                        </h6>
+                        <ul class="list-unstyled small mb-0">
+                            <li class="mb-2 d-flex align-items-start gap-2">
+                                <i class="fas fa-check text-success mt-1"></i>
+                                <span>Easy monthly and quarterly installment options</span>
+                            </li>
+                            <li class="mb-2 d-flex align-items-start gap-2">
+                                <i class="fas fa-check text-success mt-1"></i>
+                                <span>No hidden examination fees or book charges</span>
+                            </li>
+                            <li class="mb-2 d-flex align-items-start gap-2">
+                                <i class="fas fa-check text-success mt-1"></i>
+                                <span>Free demo lectures included before fee confirmation</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Center Pamphlet Link -->
+                    <div class="bg-white p-4 rounded-4 shadow-sm border text-center">
+                        <img src="/images/brochure.jpg" alt="Pamphlet Thumbnail" class="img-fluid rounded-3 mb-3 border shadow-sm" style="max-height: 220px; object-fit: contain;">
+                        <a href="/images/brochure.jpg" target="_blank" class="btn btn-sm btn-yellow w-100 fw-bold">
+                            <i class="fas fa-eye me-1"></i> View Center Pamphlet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
