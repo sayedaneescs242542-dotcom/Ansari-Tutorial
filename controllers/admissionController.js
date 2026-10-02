@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Admission = require("../models/Admission");
 const Course = require("../models/Course");
 const { defaultCourses } = require("../config/defaultData");
+const { connectDB } = require("../config/db");
 
 exports.getAdmissionForm = async (req, res) => {
     try {
@@ -111,9 +112,15 @@ exports.postAdmissionForm = async (req, res) => {
                 "Application received. Our counseling team will contact you shortly."
         };
 
-        if (mongoose.connection.readyState !== 1) {
-            throw new Error("MongoDB is not connected.");
+        console.log("📋 Admission submission received");
+
+        const connected = await connectDB();
+
+        if (!connected || mongoose.connection.readyState !== 1) {
+            throw new Error("MongoDB connection could not be established.");
         }
+
+        console.log("✅ MongoDB ready for admission save");
 
         const newAdmission = new Admission(admissionData);
 
@@ -121,7 +128,7 @@ exports.postAdmissionForm = async (req, res) => {
 
         console.log(
             "✅ Admission saved to MongoDB:",
-            newAdmission._id
+            newAdmission._id.toString()
         );
 
         req.session.success =
@@ -132,11 +139,11 @@ exports.postAdmissionForm = async (req, res) => {
     } catch (error) {
         console.error(
             "❌ Admission Submit Error:",
-            error.message
+            error
         );
 
         req.session.error =
-            "Application submission encountered an issue. Please verify all fields or call us directly at 7666875408.";
+            "Application submission encountered an issue. Please try again or call us directly at 7666875408.";
 
         res.redirect("/admission");
     }
