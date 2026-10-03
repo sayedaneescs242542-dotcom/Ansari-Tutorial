@@ -1,110 +1,92 @@
-<!-- Top Information Bar -->
+<!-- Top Bar -->
 <div class="top-bar d-none d-md-block">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center gap-4">
-                <span><i class="fas fa-phone-alt text-warning me-1"></i> Call: <a href="tel:7666875408">7666875408</a> / <a href="tel:9022420050">9022420050</a></span>
-                <span><i class="fab fa-whatsapp text-success me-1"></i> <a href="https://wa.me/917666875408?text=Hello%20Ansari%20Tutorial,%20I%20want%20to%20inquire%20about%20admissions" target="_blank" rel="noopener">WhatsApp Us</a></span>
-                <span><i class="fas fa-map-marker-alt text-warning me-1"></i> Behind Aqsa Masjid, Andheri (West), Mumbai - 400 058</span>
+                <span><i class="fas fa-phone-alt text-warning me-1"></i> Call:
+                    <a href="tel:7666875408">7666875408</a> /
+                    <a href="tel:9022420050">9022420050</a>
+                </span>
+                <span><i class="fab fa-whatsapp text-success me-1"></i>
+                    <a href="https://wa.me/917666875408?text=Hello%20Ansari%20Tutorial,%20I%20want%20to%20inquire%20about%20admissions" target="_blank" rel="noopener">WhatsApp Us</a>
+                </span>
+                <span><i class="fas fa-map-marker-alt text-warning me-1"></i>
+                    Behind Aqsa Masjid, Andheri (West), Mumbai - 400 058
+                </span>
             </div>
-
             <div class="d-flex align-items-center gap-3">
-                <span class="badge bg-warning text-dark fw-bold"><i class="fas fa-bullhorn me-1"></i> Free Demo Class Available</span>
+                <span class="badge bg-warning text-dark fw-bold">
+                    <i class="fas fa-bullhorn me-1"></i> Free Demo Class Available
+                </span>
                 <a href="/admission" class="text-white small fw-bold text-decoration-underline">Admission Open</a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Main Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
     <div class="container">
 
-        <!-- Brand Logo & Name -->
         <a class="navbar-brand" href="/">
-            <div class="brand-icon-box">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-
+            <div class="brand-icon-box"><i class="fas fa-graduation-cap"></i></div>
             <div>
-                <span class="navbar-brand-title" style="color: #ffc107;">
-                    ANSARI <span style="color: #ffc107;">TUTORIAL</span>
-                </span>
-
-                <span class="navbar-brand-subtitle" style="color: #ffc107;">
-                    <i class="fas fa-star text-warning" style="font-size: 8px;"></i>
-                    FUN + LEARNING
+                <span class="navbar-brand-title" style="color:#ffc107;">ANSARI <span>TUTORIAL</span></span>
+                <span class="navbar-brand-subtitle" style="color:#ffc107;">
+                    <i class="fas fa-star text-warning" style="font-size:8px;"></i> FUN + LEARNING
                 </span>
             </div>
         </a>
 
-        <!-- Mobile Toggle Button -->
         <button class="navbar-toggler border-0 text-white shadow-none"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+                type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
             <i class="fas fa-bars fa-lg text-white"></i>
         </button>
 
-        <!-- Nav Items -->
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
 
                 <li class="nav-item">
-                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/' ? 'active' : '' %>" href="/">
+                    <a class="nav-link <%= currentPath === '/' ? 'active' : '' %>" href="/">
                         <i class="fas fa-home me-1 d-lg-none"></i> Home
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/about' ? 'active' : '' %>" href="/about">
+                    <a class="nav-link <%= currentPath === '/about' ? 'active' : '' %>" href="/about">
                         <i class="fas fa-info-circle me-1 d-lg-none"></i> About Us
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath.startsWith('/courses') ? 'active' : '' %>" href="/courses">
+                    <a class="nav-link <%= currentPath?.startsWith('/courses') ? 'active' : '' %>" href="/courses">
                         <i class="fas fa-book-open me-1 d-lg-none"></i> Courses
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/admission' ? 'active' : '' %>" href="/admission">
+                    <a class="nav-link <%= currentPath === '/admission' ? 'active' : '' %>" href="/admission">
                         <i class="fas fa-file-signature me-1 d-lg-none"></i> Admission
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/announcements' ? 'active' : '' %>" href="/announcements">
+                    <a class="nav-link <%= currentPath === '/announcements' ? 'active' : '' %>" href="/announcements">
                         <i class="fas fa-bullhorn me-1 d-lg-none"></i> Notices
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath === '/contact' ? 'active' : '' %>" href="/contact">
+                    <a class="nav-link <%= currentPath === '/contact' ? 'active' : '' %>" href="/contact">
                         <i class="fas fa-envelope me-1 d-lg-none"></i> Contact
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link <%= typeof currentPath !== 'undefined' && currentPath.startsWith('/uml') ? 'active' : '' %>" href="/uml-diagrams">
-                        <i class="fas fa-project-diagram me-1 text-warning"></i> UML Diagrams
-                    </a>
-                </li>
-
-                <!-- Dynamic Auth / Student Portal -->
                 <% if (typeof student !== 'undefined' && student) { %>
 
                     <li class="nav-item dropdown ms-lg-3 mt-2 mt-lg-0">
                         <a class="btn btn-blue dropdown-toggle text-white d-flex align-items-center gap-2"
-                           href="#"
-                           id="studentDropdown"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                           href="#" id="studentDropdown" data-bs-toggle="dropdown">
                             <i class="fas fa-user-circle"></i>
                             <span><%= student.name.split(' ')[0] %></span>
                         </a>
@@ -115,45 +97,30 @@
                                     <i class="fas fa-id-badge me-1"></i> <%= student.course %>
                                 </h6>
                             </li>
-
                             <li><hr class="dropdown-divider"></li>
-
-                            <li>
-                                <a class="dropdown-item py-2" href="/student/dashboard">
-                                    <i class="fas fa-tachometer-alt me-2 text-primary"></i> Dashboard
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item py-2" href="/student/profile">
-                                    <i class="fas fa-user me-2 text-primary"></i> My Profile
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item py-2" href="/student/admission-details">
-                                    <i class="fas fa-file-alt me-2 text-primary"></i> Admission Status
-                                </a>
-                            </li>
-
+                            <li><a class="dropdown-item py-2" href="/student/dashboard">
+                                <i class="fas fa-tachometer-alt me-2 text-primary"></i> Dashboard
+                            </a></li>
+                            <li><a class="dropdown-item py-2" href="/student/profile">
+                                <i class="fas fa-user me-2 text-primary"></i> My Profile
+                            </a></li>
+                            <li><a class="dropdown-item py-2" href="/student/admission-details">
+                                <i class="fas fa-file-alt me-2 text-primary"></i> Admission Status
+                            </a></li>
                             <li><hr class="dropdown-divider"></li>
-
-                            <li>
-                                <a class="dropdown-item py-2 text-danger" href="/student/logout">
-                                    <i class="fas fa-sign-out-alt me-2"></i> Logout
-                                </a>
-                            </li>
+                            <li><a class="dropdown-item py-2 text-danger" href="/student/logout">
+                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                            </a></li>
                         </ul>
                     </li>
 
                 <% } else if (typeof admin !== 'undefined' && admin) { %>
 
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex gap-2 align-items-center">
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex gap-2">
                         <a class="btn btn-primary" href="/admin/dashboard">
                             <i class="fas fa-user-shield me-1"></i> Admin Panel
                         </a>
-
-                        <a class="btn btn-outline-danger btn-sm" href="/admin/logout" title="Sign Out">
+                        <a class="btn btn-outline-danger btn-sm" href="/admin/logout">
                             <i class="fas fa-sign-out-alt"></i>
                         </a>
                     </li>
