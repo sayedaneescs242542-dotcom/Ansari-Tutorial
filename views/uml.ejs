@@ -1,0 +1,441 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+<%- include('partials/messages') %>
+
+<!-- Page Header Hero -->
+<section class="py-5 text-white position-relative" style="background: linear-gradient(135deg, #07193b 0%, #0b224d 100%);">
+    <div class="container py-4 text-center">
+        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 text-uppercase">
+            <i class="fas fa-project-diagram me-1"></i> Software Engineering &amp; Academic Documentation
+        </span>
+        <h1 class="display-5 fw-bold mb-2">System Modeling using UML &amp; Database Architecture</h1>
+        <p class="lead opacity-75 max-w-700 mx-auto" style="font-size: 16px;">
+            Comprehensive architectural specifications, dynamic interaction flows, relational schemas, and deployment topologies for the <strong>Ansari Tutorial</strong> Web Platform.
+        </p>
+        
+        <!-- Action Buttons -->
+        <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+            <a href="/docs/Ansari_Tutorial_UML_Report.pdf" download class="btn btn-warning btn-lg px-4 py-2 fw-bold text-dark shadow">
+                <i class="fas fa-file-pdf me-2 text-danger"></i> Download Official PDF Report (8 Pages)
+            </a>
+            <a href="/docs/uml-print.html" target="_blank" class="btn btn-outline-light btn-lg px-4 py-2 fw-bold">
+                <i class="fas fa-external-link-alt me-2"></i> Open Printable View
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Architecture Highlights -->
+<section class="py-4 bg-light border-bottom">
+    <div class="container">
+        <div class="row g-3 text-center">
+            <div class="col-6 col-md-3">
+                <div class="p-3 bg-white rounded-3 border shadow-sm">
+                    <div class="h3 fw-bold text-primary mb-1">6</div>
+                    <div class="text-muted small fw-bold text-uppercase">UML &amp; DB Diagrams</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 bg-white rounded-3 border shadow-sm">
+                    <div class="h3 fw-bold text-success mb-1">UML 2.5</div>
+                    <div class="text-muted small fw-bold text-uppercase">Standard Notations</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 bg-white rounded-3 border shadow-sm">
+                    <div class="h3 fw-bold text-warning mb-1">3-Tier</div>
+                    <div class="text-muted small fw-bold text-uppercase">Cloud Architecture</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 bg-white rounded-3 border shadow-sm">
+                    <div class="h3 fw-bold text-danger mb-1">100%</div>
+                    <div class="text-muted small fw-bold text-uppercase">Verified for Submission</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Diagrams Explorer Section -->
+<section class="py-5">
+    <div class="container">
+        
+        <!-- Navigation Pills -->
+        <ul class="nav nav-pills justify-content-center mb-5 gap-2 flex-wrap" id="umlTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold px-4 py-2" id="uc-tab" data-bs-toggle="pill" data-bs-target="#tab-uc" type="button" role="tab">
+                    <i class="fas fa-users me-1"></i> 1. Use Case
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold px-4 py-2" id="class-tab" data-bs-toggle="pill" data-bs-target="#tab-class" type="button" role="tab">
+                    <i class="fas fa-cubes me-1"></i> 2. Class Diagram
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold px-4 py-2" id="seq-tab" data-bs-toggle="pill" data-bs-target="#tab-seq" type="button" role="tab">
+                    <i class="fas fa-exchange-alt me-1"></i> 3. Sequence
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold px-4 py-2" id="act-tab" data-bs-toggle="pill" data-bs-target="#tab-act" type="button" role="tab">
+                    <i class="fas fa-sitemap me-1"></i> 4. Activity
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold px-4 py-2" id="er-tab" data-bs-toggle="pill" data-bs-target="#tab-er" type="button" role="tab">
+                    <i class="fas fa-database me-1"></i> 5. ER Diagram
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold px-4 py-2" id="dep-tab" data-bs-toggle="pill" data-bs-target="#tab-dep" type="button" role="tab">
+                    <i class="fas fa-server me-1"></i> 6. Deployment
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold px-4 py-2" id="sdlc-tab" data-bs-toggle="pill" data-bs-target="#tab-sdlc" type="button" role="tab">
+                    <i class="fas fa-tasks me-1"></i> SDLC &amp; WBS
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div class="tab-content" id="umlTabsContent">
+            
+            <!-- ==================== TAB 1: USE CASE ==================== -->
+            <div class="tab-pane fade show active" id="tab-uc" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="fas fa-users me-2"></i> 1. UML Use Case Diagram</h4>
+                        <a href="/images/uml/1_use_case_diagram.svg" download class="btn btn-sm btn-warning fw-bold">
+                            <i class="fas fa-download me-1"></i> Download Vector SVG
+                        </a>
+                    </div>
+                    <div class="card-body p-4 text-center bg-white">
+                        <a href="/images/uml/1_use_case_diagram.svg" target="_blank" title="Click to view high-resolution image in new tab">
+                            <img src="/images/uml/1_use_case_diagram.svg" alt="UML Use Case Diagram" class="img-fluid rounded-3 border shadow-sm" style="max-height: 700px; width: 100%; object-fit: contain;">
+                        </a>
+                        <p class="text-muted small mt-2 mb-0"><i class="fas fa-search-plus me-1"></i> Click diagram to expand in full-screen</p>
+                    </div>
+                    <div class="card-footer bg-light p-4">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Description &amp; System Scope</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    The <strong>Use Case Diagram</strong> captures the functional requirements of the <strong>Ansari Tutorial</strong> portal by illustrating how external actors interact with the system boundary. It defines role privileges for visitors, enrolled students, and the Super Admin.
+                                </p>
+                                <ul class="list-unstyled text-muted small">
+                                    <li class="mb-1"><i class="fas fa-check-circle text-success me-2"></i> <strong>Visitor / Applicant:</strong> Browses 5 course streams, previews official brochure, submits admission applications, and connects via the WhatsApp helpline.</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle text-success me-2"></i> <strong>Enrolled Student:</strong> Authenticates via secure session, accesses notice board, and submits slow learner doubt assistance queries.</li>
+                                    <li class="mb-1"><i class="fas fa-check-circle text-success me-2"></i> <strong>Super Admin (Sir Faisal Ansari):</strong> Manages course catalog, publishes exam alerts, reviews admission inquiries, and monitors database sync.</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Key UML Notations Used</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm small bg-white mb-0">
+                                        <thead class="table-light">
+                                            <tr><th>Notation</th><th>Meaning in Ansari Tutorial</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><strong>Stick Figure</strong></td><td>Actors: Visitor, Enrolled Student, Super Admin (Sir Faisal Ansari)</td></tr>
+                                            <tr><td><strong>Ellipses</strong></td><td>Functional use cases (Browse Courses, Apply Online, Manage Notices)</td></tr>
+                                            <tr><td><strong>«include»</strong></td><td>Mandatory sub-processes: Form Validation, Session Verification</td></tr>
+                                            <tr><td><strong>System Boundary</strong></td><td>Express.js Web Application container hosted on Port 3000</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 2: CLASS DIAGRAM ==================== -->
+            <div class="tab-pane fade" id="tab-class" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="fas fa-cubes me-2"></i> 2. UML Class Diagram</h4>
+                        <a href="/images/uml/2_class_diagram.svg" download class="btn btn-sm btn-warning fw-bold">
+                            <i class="fas fa-download me-1"></i> Download Vector SVG
+                        </a>
+                    </div>
+                    <div class="card-body p-4 text-center bg-white">
+                        <a href="/images/uml/2_class_diagram.svg" target="_blank">
+                            <img src="/images/uml/2_class_diagram.svg" alt="UML Class Diagram" class="img-fluid rounded-3 border shadow-sm" style="max-height: 700px; width: 100%; object-fit: contain;">
+                        </a>
+                        <p class="text-muted small mt-2 mb-0"><i class="fas fa-search-plus me-1"></i> Click diagram to expand in full-screen</p>
+                    </div>
+                    <div class="card-footer bg-light p-4">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Object-Oriented Structure</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    Represents the static software architecture, detailing Mongoose ODM data models, attributes, visibility modifiers (<code>-</code> private, <code>+</code> public), and method signatures for Express controllers and services.
+                                </p>
+                                <div class="p-3 bg-white rounded border">
+                                    <strong class="text-dark">Core Classes:</strong>
+                                    <ul class="mb-0 mt-1 small text-muted">
+                                        <li><strong>Admin:</strong> Handles super-user authentication, credentials hashing (Bcrypt), and course management.</li>
+                                        <li><strong>Course:</strong> Encapsulates title, stream, standard, subjects, fees, and slow learner flags.</li>
+                                        <li><strong>AdmissionApplication:</strong> Tracks applicant contact details, chosen stream, and counselor status.</li>
+                                        <li><strong>Announcement:</strong> Stores prioritized notices and exam schedules.</li>
+                                        <li><strong>DatabaseService:</strong> Manages Atlas connection pooling, resilient offline fallback, and auto-seeding.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Associations &amp; Multiplicity</h5>
+                                <ul class="list-unstyled text-muted small">
+                                    <li class="mb-2"><strong>Admin ➔ Course (1 to 0..*):</strong> One admin manages multiple courses across all 5 streams.</li>
+                                    <li class="mb-2"><strong>Admin ➔ Announcement (1 to 0..*):</strong> One admin publishes multiple exam and holiday notices.</li>
+                                    <li class="mb-2"><strong>Admin ➔ AdmissionApplication (1 to 0..*):</strong> One admin reviews and processes incoming student inquiries.</li>
+                                    <li class="mb-2"><strong>AdmissionApplication ➔ Course (0..* to 1):</strong> Multiple admission leads apply for a specific course offering.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 3: SEQUENCE DIAGRAM ==================== -->
+            <div class="tab-pane fade" id="tab-seq" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="fas fa-exchange-alt me-2"></i> 3. UML Sequence Diagram</h4>
+                        <a href="/images/uml/3_sequence_diagram.svg" download class="btn btn-sm btn-warning fw-bold">
+                            <i class="fas fa-download me-1"></i> Download Vector SVG
+                        </a>
+                    </div>
+                    <div class="card-body p-4 text-center bg-white">
+                        <a href="/images/uml/3_sequence_diagram.svg" target="_blank">
+                            <img src="/images/uml/3_sequence_diagram.svg" alt="UML Sequence Diagram" class="img-fluid rounded-3 border shadow-sm" style="max-height: 700px; width: 100%; object-fit: contain;">
+                        </a>
+                        <p class="text-muted small mt-2 mb-0"><i class="fas fa-search-plus me-1"></i> Click diagram to expand in full-screen</p>
+                    </div>
+                    <div class="card-footer bg-light p-4">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Dynamic Interaction Flow</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    Illustrates chronological message exchanges across system lifelines during student online admission enrollment, including client-side validation, Express controller routing, and MongoDB Atlas persistence.
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">High-Resilience [alt] Frame</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    The sequence diagram features an explicit <code>[alt]</code> conditional block demonstrating how the application handles database states:
+                                </p>
+                                <ul class="small text-muted mb-0">
+                                    <li><strong>Case A (Atlas Online):</strong> Directly executes <code>admissions.insertOne()</code> with write acknowledgement.</li>
+                                    <li><strong>Case B (Atlas IP Pending):</strong> Gracefully buffers application in memory without displaying a 500 error or freezing the user experience.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 4: ACTIVITY DIAGRAM ==================== -->
+            <div class="tab-pane fade" id="tab-act" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="fas fa-sitemap me-2"></i> 4. UML Activity Diagram</h4>
+                        <a href="/images/uml/4_activity_diagram.svg" download class="btn btn-sm btn-warning fw-bold">
+                            <i class="fas fa-download me-1"></i> Download Vector SVG
+                        </a>
+                    </div>
+                    <div class="card-body p-4 text-center bg-white">
+                        <a href="/images/uml/4_activity_diagram.svg" target="_blank">
+                            <img src="/images/uml/4_activity_diagram.svg" alt="UML Activity Diagram" class="img-fluid rounded-3 border shadow-sm" style="max-height: 700px; width: 100%; object-fit: contain;">
+                        </a>
+                        <p class="text-muted small mt-2 mb-0"><i class="fas fa-search-plus me-1"></i> Click diagram to expand in full-screen</p>
+                    </div>
+                    <div class="card-footer bg-light p-4">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">4-Tier Swimlane Architecture</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    Maps the end-to-end lifecycle of an enrollment enquiry across four organizational partitions:
+                                </p>
+                                <ol class="small text-muted mb-0">
+                                    <li><strong>Student / Applicant:</strong> Discovers center, selects course stream, enters details.</li>
+                                    <li><strong>Frontend View:</strong> Validates input fields and provides instant error feedback.</li>
+                                    <li><strong>Backend &amp; DB Layer:</strong> Sanitizes data, queries database connectivity, commits record.</li>
+                                    <li><strong>Counselor / Admin:</strong> Conducts personal evaluation and slow learner assessment.</li>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Fork &amp; Join Synchronization</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    Uses standard UML <strong>«fork»</strong> bars to illustrate concurrent actions: simultaneously generating the applicant's WhatsApp confirmation alert while triggering a real-time lead notification in Sir Faisal Ansari's administrative dashboard.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 5: ER DIAGRAM ==================== -->
+            <div class="tab-pane fade" id="tab-er" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="fas fa-database me-2"></i> 5. Entity-Relationship (ER) Diagram</h4>
+                        <a href="/images/uml/5_er_diagram.svg" download class="btn btn-sm btn-warning fw-bold">
+                            <i class="fas fa-download me-1"></i> Download Vector SVG
+                        </a>
+                    </div>
+                    <div class="card-body p-4 text-center bg-white">
+                        <a href="/images/uml/5_er_diagram.svg" target="_blank">
+                            <img src="/images/uml/5_er_diagram.svg" alt="Entity Relationship Diagram" class="img-fluid rounded-3 border shadow-sm" style="max-height: 700px; width: 100%; object-fit: contain;">
+                        </a>
+                        <p class="text-muted small mt-2 mb-0"><i class="fas fa-search-plus me-1"></i> Click diagram to expand in full-screen</p>
+                    </div>
+                    <div class="card-footer bg-light p-4">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Relational Data Model in NoSQL</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    Depicts the logical schema used across MongoDB Atlas collections. While MongoDB is document-oriented, Mongoose enforces referential integrity through <code>ObjectId</code> references and strict schema validation.
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm small bg-white mb-0">
+                                        <thead class="table-light">
+                                            <tr><th>Collection</th><th>Primary Key</th><th>Key Relationships</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><strong>admins</strong></td><td><code>_id (PK)</code></td><td>Publishes Notices, Manages Courses</td></tr>
+                                            <tr><td><strong>courses</strong></td><td><code>_id (PK)</code></td><td>Categorized by 5 official streams</td></tr>
+                                            <tr><td><strong>admissions</strong></td><td><code>_id (PK)</code></td><td>Foreign Key reference to <code>course_id</code></td></tr>
+                                            <tr><td><strong>announcements</strong></td><td><code>_id (PK)</code></td><td>Linked to <code>admin_author_id</code></td></tr>
+                                            <tr><td><strong>students</strong></td><td><code>_id (PK)</code></td><td>Enrolled via <code>enrolled_course_id</code></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Crow's Foot Cardinalities</h5>
+                                <ul class="list-unstyled text-muted small">
+                                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> <strong>ADMIN ➔ COURSE (1 : N):</strong> One administrator creates and updates multiple courses.</li>
+                                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> <strong>ADMIN ➔ ANNOUNCEMENT (1 : N):</strong> One administrator broadcasts multiple public notices.</li>
+                                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> <strong>COURSE ➔ ADMISSION (1 : N):</strong> Each course receives multiple prospective student applications.</li>
+                                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> <strong>COURSE ➔ STUDENT (1 : N):</strong> Each course enrolls a cohort of registered pupils.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 6: DEPLOYMENT ==================== -->
+            <div class="tab-pane fade" id="tab-dep" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="fas fa-server me-2"></i> 6. UML Deployment Diagram</h4>
+                        <a href="/images/uml/6_deployment_diagram.svg" download class="btn btn-sm btn-warning fw-bold">
+                            <i class="fas fa-download me-1"></i> Download Vector SVG
+                        </a>
+                    </div>
+                    <div class="card-body p-4 text-center bg-white">
+                        <a href="/images/uml/6_deployment_diagram.svg" target="_blank">
+                            <img src="/images/uml/6_deployment_diagram.svg" alt="UML Deployment Diagram" class="img-fluid rounded-3 border shadow-sm" style="max-height: 700px; width: 100%; object-fit: contain;">
+                        </a>
+                        <p class="text-muted small mt-2 mb-0"><i class="fas fa-search-plus me-1"></i> Click diagram to expand in full-screen</p>
+                    </div>
+                    <div class="card-footer bg-light p-4">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">3-Tier Cloud Infrastructure</h5>
+                                <p class="text-muted" style="font-size: 14.5px; line-height: 1.7;">
+                                    Illustrates the physical nodes, execution environments, and network protocols linking client browsers to the Node.js application server and the MongoDB Atlas cloud cluster.
+                                </p>
+                                <ul class="small text-muted mb-0">
+                                    <li><strong>Tier 1 (Client):</strong> Standard desktop or mobile browsers executing HTML5, Bootstrap 5 CSS, and client-side JavaScript.</li>
+                                    <li><strong>Tier 2 (App Server):</strong> Node.js v24 runtime with Express framework, EJS view caching, session manager, and non-blocking fallback engine running on Port 3000.</li>
+                                    <li><strong>Tier 3 (Cloud Database):</strong> MongoDB Atlas M0 cluster hosted in AWS Mumbai (ap-south-1) with replica set high-availability.</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-primary mb-2">Network Protocols &amp; Ports</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-sm small bg-white mb-0">
+                                        <thead class="table-light">
+                                            <tr><th>Link</th><th>Protocol</th><th>Port</th><th>Security</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>Client ➔ Server</td><td>HTTP / HTTPS</td><td>3000</td><td>Encrypted Cookie Session</td></tr>
+                                            <tr><td>Server ➔ Atlas</td><td>MongoDB Wire Protocol</td><td>27017</td><td>TLS 1.3 + SRV DNS Resolver</td></tr>
+                                            <tr><td>Server ➔ Fallback</td><td>In-Memory Loopback</td><td>Local</td><td>Zero-delay fault tolerance</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== TAB 7: SDLC & WBS ==================== -->
+            <div class="tab-pane fade" id="tab-sdlc" role="tabpanel">
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="fas fa-tasks me-2"></i> SDLC Agile Model, WBS &amp; Gantt Timeline</h4>
+                        <div class="d-flex gap-2">
+                            <a href="/images/sdlc/1_sdlc_agile_model.svg" download class="btn btn-sm btn-warning fw-bold">
+                                <i class="fas fa-download me-1"></i> SDLC Model
+                            </a>
+                            <a href="/images/sdlc/2_work_breakdown_structure.svg" download class="btn btn-sm btn-light fw-bold">
+                                <i class="fas fa-download me-1"></i> WBS Tree
+                            </a>
+                            <a href="/images/sdlc/3_gantt_chart_timeline.svg" download class="btn btn-sm btn-warning fw-bold">
+                                <i class="fas fa-download me-1"></i> Gantt Chart
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body p-4 bg-white">
+                        <h5 class="fw-bold text-primary mb-3">1. SDLC Agile Scrum Framework</h5>
+                        <div class="text-center mb-5">
+                            <a href="/images/sdlc/1_sdlc_agile_model.svg" target="_blank">
+                                <img src="/images/sdlc/1_sdlc_agile_model.svg" alt="SDLC Agile Framework" class="img-fluid rounded-3 border shadow-sm" style="max-height: 600px; width: 100%; object-fit: contain;">
+                            </a>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <h5 class="fw-bold text-primary mb-3">2. Work Breakdown Structure (WBS)</h5>
+                        <div class="text-center mb-5">
+                            <a href="/images/sdlc/2_work_breakdown_structure.svg" target="_blank">
+                                <img src="/images/sdlc/2_work_breakdown_structure.svg" alt="Work Breakdown Structure" class="img-fluid rounded-3 border shadow-sm" style="max-height: 600px; width: 100%; object-fit: contain;">
+                            </a>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <h5 class="fw-bold text-primary mb-3">3. Project Timeline (Gantt Chart)</h5>
+                        <div class="text-center">
+                            <a href="/images/sdlc/3_gantt_chart_timeline.svg" target="_blank">
+                                <img src="/images/sdlc/3_gantt_chart_timeline.svg" alt="Gantt Chart Timeline" class="img-fluid rounded-3 border shadow-sm" style="max-height: 600px; width: 100%; object-fit: contain;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Download Banner Call to Action -->
+        <div class="p-4 p-md-5 rounded-4 text-white text-center shadow-lg" style="background: linear-gradient(135deg, #0b224d, #1e3a8a); border: 2px solid #f59e0b;">
+            <h2 class="fw-bold mb-2">Need This For Your Project Submission / Black Book?</h2>
+            <p class="lead opacity-75 max-w-700 mx-auto mb-4" style="font-size: 16px;">
+                Download the complete, publication-grade 8-page PDF document complete with cover page, institutional metadata, and full-resolution diagrams.
+            </p>
+            <a href="/docs/Ansari_Tutorial_UML_Report.pdf" download class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark shadow-sm">
+                <i class="fas fa-file-pdf me-2 text-danger"></i> Download Project UML &amp; SDLC Report (PDF)
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<%- include('partials/footer') %>

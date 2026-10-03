@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1050" width="1500" height="1050">
+  <defs>
+    <linearGradient id="bgAct" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#edf2f7" />
+    </linearGradient>
+    <linearGradient id="topNavAct" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b224d" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="actBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="actGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="actPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="actRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#be123c" />
+    </linearGradient>
+    <filter id="actShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="actArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1050" fill="url(#bgAct)" />
+
+  <!-- Top Title Banner -->
+  <rect x="40" y="25" width="1420" height="80" rx="14" fill="url(#topNavAct)" filter="url(#actShadow)" />
+  <text x="70" y="60" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff">
+    SYSTEM MODELING: UML ACTIVITY DIAGRAM
+  </text>
+  <text x="70" y="85" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="13" fill="#93c5fd">
+    Workflow: Student Admission, Course Selection &amp; Verification Lifecycle | 4-Tier Swimlanes
+  </text>
+  <rect x="1240" y="45" width="190" height="38" rx="19" fill="#f59e0b" />
+  <text x="1335" y="69" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#0b224d">
+    SWIMLANE LOGIC
+  </text>
+
+  <!-- ==================== 4 SWIMLANES ==================== -->
+  <!-- Lane 1: Student / Visitor (width=350, x=40) -->
+  <!-- Lane 2: Web UI View (width=350, x=390) -->
+  <!-- Lane 3: Backend & Database (width=360, x=740) -->
+  <!-- Lane 4: Admin / Counselor (width=360, x=1100) -->
+
+  <g transform="translate(40, 125)">
+    <!-- Lane 1 Background & Header -->
+    <rect x="0" y="0" width="350" height="860" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="0" y="0" width="350" height="42" rx="10" fill="#1e3a8a" />
+    <rect x="0" y="26" width="350" height="16" fill="#1e3a8a" />
+    <text x="175" y="27" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      1. Student / Applicant
+    </text>
+
+    <!-- Lane 2 Background & Header -->
+    <rect x="350" y="0" width="350" height="860" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="350" y="0" width="350" height="42" rx="10" fill="#059669" />
+    <rect x="350" y="26" width="350" height="16" fill="#059669" />
+    <text x="525" y="27" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      2. Frontend View (EJS)
+    </text>
+
+    <!-- Lane 3 Background & Header -->
+    <rect x="700" y="0" width="360" height="860" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="700" y="0" width="360" height="42" rx="10" fill="#7c3aed" />
+    <rect x="700" y="26" width="360" height="16" fill="#7c3aed" />
+    <text x="880" y="27" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      3. Express &amp; Atlas Database
+    </text>
+
+    <!-- Lane 4 Background & Header -->
+    <rect x="1060" y="0" width="360" height="860" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="1060" y="0" width="360" height="42" rx="10" fill="#dc2626" />
+    <rect x="1060" y="26" width="360" height="16" fill="#dc2626" />
+    <text x="1240" y="27" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      4. Sir Faisal Ansari / Counselor
+    </text>
+
+    <!-- ==================== ACTIVITIES & NODES ==================== -->
+
+    <!-- Initial State (Solid Circle) in Lane 1 -->
+    <circle cx="175" cy="70" r="14" fill="#0b224d" />
+    <line x1="175" y1="84" x2="175" y2="115" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+
+    <!-- Action 1: Visit Website & Browse Courses -->
+    <g transform="translate(60, 115)">
+      <rect x="0" y="0" width="230" height="50" rx="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#actShadow)" />
+      <text x="115" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#1e3a8a">Visit Ansari Tutorial Portal</text>
+      <text x="115" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Explore 2019 Est. &amp; 5 Streams</text>
+    </g>
+
+    <!-- Arrow to UI (Lane 2) -->
+    <path d="M 290 140 L 410 140" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+
+    <!-- Action 2: Render Course Catalog & Brochure -->
+    <g transform="translate(410, 115)">
+      <rect x="0" y="0" width="230" height="50" rx="16" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#actShadow)" />
+      <text x="115" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#065f46">Display Course Details</text>
+      <text x="115" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Pamphlet Modal &amp; Fees Info</text>
+    </g>
+
+    <!-- Arrow back to Student (Fill form) -->
+    <path d="M 525 165 L 525 210 L 290 210" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+
+    <!-- Action 3: Fill Online Admission Form -->
+    <g transform="translate(60, 185)">
+      <rect x="0" y="0" width="230" height="50" rx="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#actShadow)" />
+      <text x="115" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#1e3a8a">Fill Online Admission Form</text>
+      <text x="115" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Select Stream &amp; Slow Learner Care</text>
+    </g>
+
+    <!-- Arrow to Frontend Validation (Lane 2) -->
+    <path d="M 175 235 L 175 275 L 435 275" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+
+    <!-- Decision 1: Form Validation Diamond in Lane 2 -->
+    <g transform="translate(480, 250)">
+      <polygon points="45,0 90,25 45,50 0,25" fill="#fef08a" stroke="#ca8a04" stroke-width="2" />
+      <text x="45" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#854d0e">Valid?</text>
+    </g>
+
+    <!-- Decision 1: [No] -> Loop back to Lane 1 -->
+    <path d="M 480 275 L 290 275" fill="none" stroke="#e11d48" stroke-width="1.8" marker-end="url(#actArr)" />
+    <text x="380" y="268" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e11d48">[Invalid Inputs]</text>
+
+    <!-- Decision 1: [Yes] -> Move to Backend Lane 3 -->
+    <path d="M 570 275 L 750 275" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#actArr)" />
+    <text x="640" y="268" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#059669">[Valid: POST /apply]</text>
+
+    <!-- Action 4: Express Controller Interception (Lane 3) -->
+    <g transform="translate(750, 250)">
+      <rect x="0" y="0" width="260" height="50" rx="16" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" filter="url(#actShadow)" />
+      <text x="130" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#5b21b6">Sanitize &amp; Create Lead Record</text>
+      <text x="130" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Mongoose Document Instantiation</text>
+    </g>
+
+    <!-- Arrow down to DB connectivity decision -->
+    <path d="M 880 300 L 880 340" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+
+    <!-- Decision 2: MongoDB Atlas Online / Fallback (Lane 3) -->
+    <g transform="translate(835, 340)">
+      <polygon points="45,0 90,25 45,50 0,25" fill="#fed7aa" stroke="#ea580c" stroke-width="2" />
+      <text x="45" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="9.5" fill="#9a3412">Atlas DB?</text>
+    </g>
+
+    <!-- Branch A: [Connected] -> Save directly to Atlas -->
+    <path d="M 925 365 L 970 365 L 970 415 L 930 415" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#actArr)" />
+    <text x="940" y="358" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#059669">[Online]</text>
+    <g transform="translate(740, 400)">
+      <rect x="0" y="0" width="190" height="42" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8" />
+      <text x="95" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#065f46">Commit to Atlas DB</text>
+    </g>
+
+    <!-- Branch B: [Offline / Whitelist Pending] -> Resilient Buffer -->
+    <path d="M 835 365 L 720 365 L 720 455 L 740 455" fill="none" stroke="#d97706" stroke-width="2" marker-end="url(#actArr)" />
+    <text x="730" y="358" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#d97706">[Fallback]</text>
+    <g transform="translate(740, 450)">
+      <rect x="0" y="0" width="190" height="42" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.8" />
+      <text x="95" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#92400e">Buffer in Fast Memory</text>
+    </g>
+
+    <!-- Both branches join to a Fork Bar -->
+    <path d="M 835 442 L 835 520" fill="none" stroke="#334155" stroke-width="2" />
+    <path d="M 835 492 L 835 520" fill="none" stroke="#334155" stroke-width="2" />
+
+    <!-- FORK BAR (Thick horizontal bar) -->
+    <rect x="300" y="520" width="900" height="7" rx="3" fill="#0f172a" />
+    <text x="750" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0f172a">«fork» Concurrent Pathways</text>
+
+    <!-- Branch 1: Toward Student Confirmation (Left) -->
+    <path d="M 450 527 L 450 565" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+    <g transform="translate(340, 565)">
+      <rect x="0" y="0" width="220" height="50" rx="16" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#actShadow)" />
+      <text x="110" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#065f46">Render Success Notice</text>
+      <text x="110" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Counselor Helpline Provided</text>
+    </g>
+
+    <path d="M 450 615 L 450 655 L 290 655" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+    <g transform="translate(60, 630)">
+      <rect x="0" y="0" width="230" height="50" rx="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#actShadow)" />
+      <text x="115" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#1e3a8a">Receive WhatsApp Confirmation</text>
+      <text x="115" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Quick Chat to 7666875408</text>
+    </g>
+
+    <!-- Branch 2: Toward Super Admin (Right) -->
+    <path d="M 1150 527 L 1150 565" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+    <g transform="translate(1100, 565)">
+      <rect x="0" y="0" width="280" height="50" rx="16" fill="#fff1f2" stroke="#f43f5e" stroke-width="2" filter="url(#actShadow)" />
+      <text x="140" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#9f1239">New Inquiry Notification</text>
+      <text x="140" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Appears on /admin/dashboard</text>
+    </g>
+
+    <path d="M 1240 615 L 1240 655" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+    <g transform="translate(1100, 655)">
+      <rect x="0" y="0" width="280" height="50" rx="16" fill="#fff1f2" stroke="#f43f5e" stroke-width="2" filter="url(#actShadow)" />
+      <text x="140" y="22" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="11.5" fill="#9f1239">Conduct Counseling Session</text>
+      <text x="140" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Assess Slow Learner Needs</text>
+    </g>
+
+    <!-- Decision 3: Admission Enrolled? -->
+    <path d="M 1240 705 L 1240 735" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+    <g transform="translate(1195, 735)">
+      <polygon points="45,0 90,25 45,50 0,25" fill="#fef08a" stroke="#ca8a04" stroke-width="2" />
+      <text x="45" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="9.5" fill="#854d0e">Admit?</text>
+    </g>
+
+    <path d="M 1285 760 L 1330 760 L 1330 805" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#actArr)" />
+    <text x="1295" y="750" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#059669">[Enrolled]</text>
+    <g transform="translate(1210, 805)">
+      <rect x="0" y="0" width="180" height="38" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8" />
+      <text x="90" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#065f46">Assign Student Portal ID</text>
+    </g>
+
+    <!-- JOIN BAR (Thick horizontal bar) -->
+    <path d="M 175 680 L 175 870 L 600 870" fill="none" stroke="#334155" stroke-width="2" />
+    <path d="M 1300 843 L 1300 870 L 800 870" fill="none" stroke="#334155" stroke-width="2" />
+
+    <rect x="550" y="867" width="300" height="7" rx="3" fill="#0f172a" />
+    <text x="700" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0f172a">«join» Process Synchronization</text>
+
+    <!-- Final State (Encircled Bullseye) -->
+    <path d="M 700 874 L 700 900" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#actArr)" />
+    <circle cx="700" cy="918" r="16" fill="none" stroke="#0f172a" stroke-width="2.5" />
+    <circle cx="700" cy="918" r="10" fill="#0f172a" />
+    <text x="735" y="922" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#0f172a">
+      Enrollment Complete
+    </text>
+  </g>
+
+  <!-- Bottom Legend -->
+  <g transform="translate(40, 1005)">
+    <text x="20" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">ACTIVITY NOTATIONS:</text>
+    <circle cx="170" cy="16" r="7" fill="#0b224d" />
+    <text x="185" y="20" font-family="Arial, sans-serif" font-size="11" fill="#475569">Start Node</text>
+    <rect x="260" y="10" width="35" height="12" rx="6" fill="#eff6ff" stroke="#3b82f6" />
+    <text x="305" y="20" font-family="Arial, sans-serif" font-size="11" fill="#475569">Action State</text>
+    <polygon points="400,10 410,16 400,22 390,16" fill="#fef08a" stroke="#ca8a04" />
+    <text x="420" y="20" font-family="Arial, sans-serif" font-size="11" fill="#475569">Decision Diamond</text>
+    <rect x="545" y="14" width="40" height="4" rx="2" fill="#0f172a" />
+    <text x="595" y="20" font-family="Arial, sans-serif" font-size="11" fill="#475569">Fork / Join Synchronization Bar</text>
+    <circle cx="790" cy="16" r="7" fill="none" stroke="#0f172a" />
+    <circle cx="790" cy="16" r="4" fill="#0f172a" />
+    <text x="805" y="20" font-family="Arial, sans-serif" font-size="11" fill="#475569">Final End State</text>
+  </g>
+</svg>

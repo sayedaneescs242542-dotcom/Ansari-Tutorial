@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b224d" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e3a8a" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+  </defs>
+
+  <rect width="1400" height="850" fill="url(#bgGrad)" />
+
+  <!-- Top Header Banner -->
+  <rect x="40" y="30" width="1320" height="90" rx="16" fill="url(#primaryGrad)" filter="url(#cardShadow)" />
+  <text x="70" y="68" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff" letter-spacing="0.5">
+    SOFTWARE DEVELOPMENT LIFE CYCLE (SDLC) ARCHITECTURE
+  </text>
+  <text x="70" y="98" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="14" fill="#93c5fd">
+    Selected Model: Agile Scrum Framework &amp; Iterative Sprints | Project: Ansari Tutorial Web Application (Est. 2019)
+  </text>
+  <rect x="1130" y="52" width="200" height="42" rx="21" fill="#f59e0b" />
+  <text x="1230" y="78" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="13" fill="#0b224d">
+    AGILE SCRUM MODEL
+  </text>
+
+  <!-- Left: Inputs & Backlog -->
+  <g transform="translate(60, 160)">
+    <!-- Stakeholder Input Card -->
+    <rect x="0" y="0" width="260" height="180" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="0" y="0" width="260" height="44" rx="14" fill="url(#blueGrad)" />
+    <text x="130" y="28" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      1. Stakeholder Inputs
+    </text>
+    <text x="20" y="70" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" font-weight="bold">• Academic Director:</text>
+    <text x="28" y="88" font-family="Arial, sans-serif" font-size="12" fill="#475569">Sir Faisal Ansari (Eng. Grad)</text>
+    <text x="20" y="112" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" font-weight="bold">• Center Requirements:</text>
+    <text x="28" y="130" font-family="Arial, sans-serif" font-size="12" fill="#475569">"Fun+Learning", Slow Learners</text>
+    <text x="20" y="152" font-family="Arial, sans-serif" font-size="12" fill="#1e293b" font-weight="bold">• Official Pamphlet &amp; Courses</text>
+
+    <!-- Product Backlog Card -->
+    <rect x="0" y="210" width="260" height="230" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="0" y="210" width="260" height="44" rx="14" fill="url(#purpleGrad)" />
+    <text x="130" y="238" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      2. Product Backlog
+    </text>
+    <g transform="translate(18, 275)" font-family="Arial, sans-serif" font-size="12" fill="#334155">
+      <rect x="0" y="0" width="224" height="28" rx="6" fill="#f1f5f9" stroke="#e2e8f0" />
+      <text x="12" y="19" font-weight="600">US-01: Public Portal &amp; Brochure</text>
+      
+      <rect x="0" y="36" width="224" height="28" rx="6" fill="#f1f5f9" stroke="#e2e8f0" />
+      <text x="12" y="55" font-weight="600">US-02: 5-Stream Course Catalog</text>
+      
+      <rect x="0" y="72" width="224" height="28" rx="6" fill="#f1f5f9" stroke="#e2e8f0" />
+      <text x="12" y="91" font-weight="600">US-03: Online Admission Form</text>
+      
+      <rect x="0" y="108" width="224" height="28" rx="6" fill="#f1f5f9" stroke="#e2e8f0" />
+      <text x="12" y="127" font-weight="600">US-04: Student &amp; Admin Portals</text>
+
+      <rect x="0" y="144" width="224" height="28" rx="6" fill="#f1f5f9" stroke="#e2e8f0" />
+      <text x="12" y="163" font-weight="600">US-05: Atlas DB &amp; Resilient Fallback</text>
+    </g>
+
+    <!-- Connector: Backlog to Sprint Planning -->
+    <path d="M 260 325 L 340 325" fill="none" stroke="#1e3a8a" stroke-width="2.5" marker-end="url(#arrow)" />
+  </g>
+
+  <!-- Middle: Agile 2-Week Sprint Cycle -->
+  <g transform="translate(370, 160)">
+    <!-- Sprint Planning Card -->
+    <rect x="0" y="90" width="180" height="260" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="0" y="90" width="180" height="44" rx="14" fill="url(#cyanGrad)" />
+    <text x="90" y="118" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="13" fill="#ffffff">
+      3. Sprint Planning
+    </text>
+    <g transform="translate(14, 150)" font-family="Arial, sans-serif" font-size="11.5" fill="#334155">
+      <text x="0" y="0" font-weight="bold" fill="#0891b2">Sprint Duration:</text>
+      <text x="0" y="18">2-Week Agile Cadence</text>
+      <text x="0" y="45" font-weight="bold" fill="#0891b2">Team Capacity:</text>
+      <text x="0" y="63">Fullstack Lead, UI/UX,</text>
+      <text x="0" y="80">DB Engineer, QA Tester</text>
+      <text x="0" y="105" font-weight="bold" fill="#0891b2">Sprint Goal Definition:</text>
+      <text x="0" y="123">Milestone deliverables</text>
+      <text x="0" y="140">with daily scrums</text>
+    </g>
+
+    <!-- Connector to Sprint Cycle -->
+    <path d="M 180 220 L 240 220" fill="none" stroke="#1e3a8a" stroke-width="2.5" marker-end="url(#arrow)" />
+
+    <!-- Big Circular Sprint Engine -->
+    <g transform="translate(240, 20)">
+      <!-- Outer Orbit Circle -->
+      <circle cx="230" cy="230" r="185" fill="#f8fafc" stroke="#3b82f6" stroke-width="4" stroke-dasharray="10 8" />
+      <circle cx="230" cy="230" r="145" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#cardShadow)" />
+      
+      <!-- Central Sprint Emblem -->
+      <circle cx="230" cy="230" r="60" fill="url(#primaryGrad)" />
+      <text x="230" y="222" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="15" fill="#ffffff">
+        SPRINT
+      </text>
+      <text x="230" y="242" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="13" fill="#f59e0b">
+        CYCLE
+      </text>
+      <text x="230" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="10" fill="#93c5fd">
+        14 DAYS
+      </text>
+
+      <!-- 6 Interactive Cycle Nodes -->
+      <!-- Node 1: Requirements -->
+      <g transform="translate(230, 45)">
+        <circle cx="0" cy="0" r="32" fill="#eff6ff" stroke="#2563eb" stroke-width="2" />
+        <text x="0" y="-4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#1e3a8a">1. Analyze</text>
+        <text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#475569">Brochure/Scope</text>
+      </g>
+
+      <!-- Node 2: UI/UX Prototyping -->
+      <g transform="translate(375, 120)">
+        <circle cx="0" cy="0" r="32" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2" />
+        <text x="0" y="-4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#5b21b6">2. Design</text>
+        <text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#475569">EJS/Bootstrap</text>
+      </g>
+
+      <!-- Node 3: Coding -->
+      <g transform="translate(375, 340)">
+        <circle cx="0" cy="0" r="32" fill="#ecfdf5" stroke="#10b981" stroke-width="2" />
+        <text x="0" y="-4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#065f46">3. Develop</text>
+        <text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#475569">Node/Express</text>
+      </g>
+
+      <!-- Node 4: Testing & Resilient Fallback -->
+      <g transform="translate(230, 415)">
+        <circle cx="0" cy="0" r="32" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" />
+        <text x="0" y="-4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#92400e">4. Test &amp; QA</text>
+        <text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#475569">Fast Failover</text>
+      </g>
+
+      <!-- Node 5: Review & Stakeholder Demo -->
+      <g transform="translate(85, 340)">
+        <circle cx="0" cy="0" r="32" fill="#fdf2f8" stroke="#ec4899" stroke-width="2" />
+        <text x="0" y="-4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#9d174d">5. Review</text>
+        <text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#475569">Director Demo</text>
+      </g>
+
+      <!-- Node 6: Retrospective -->
+      <g transform="translate(85, 120)">
+        <circle cx="0" cy="0" r="32" fill="#ecfeff" stroke="#06b6d4" stroke-width="2" />
+        <text x="0" y="-4" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#155e75">6. Retro</text>
+        <text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#475569">Optimization</text>
+      </g>
+    </g>
+
+    <!-- Connector to Output Release -->
+    <path d="M 680 250 L 740 250" fill="none" stroke="#059669" stroke-width="3" marker-end="url(#arrowGreen)" />
+  </g>
+
+  <!-- Right: Shippable Deliverables & Live Portal -->
+  <g transform="translate(1120, 160)">
+    <rect x="0" y="20" width="220" height="420" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="0" y="20" width="220" height="44" rx="14" fill="url(#emeraldGrad)" />
+    <text x="110" y="48" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#ffffff">
+      4. Working Product
+    </text>
+
+    <g transform="translate(15, 80)" font-family="Arial, sans-serif" font-size="11.5">
+      <rect x="0" y="0" width="190" height="60" rx="8" fill="#f0fdf4" stroke="#86efac" />
+      <text x="10" y="20" font-weight="bold" fill="#166534">Release v1.0 (Public):</text>
+      <text x="10" y="36" fill="#15803d">• 2019 Est. &amp; Sir Faisal Bio</text>
+      <text x="10" y="50" fill="#15803d">• 5 Course Streams &amp; Brochure</text>
+
+      <rect x="0" y="70" width="190" height="60" rx="8" fill="#f0fdf4" stroke="#86efac" />
+      <text x="10" y="90" font-weight="bold" fill="#166534">Release v1.5 (Engage):</text>
+      <text x="10" y="106" fill="#15803d">• Admission Online Portal</text>
+      <text x="10" y="120" fill="#15803d">• Direct WhatsApp Chat Widget</text>
+
+      <rect x="0" y="140" width="190" height="60" rx="8" fill="#f0fdf4" stroke="#86efac" />
+      <text x="10" y="160" font-weight="bold" fill="#166534">Release v2.0 (Admin):</text>
+      <text x="10" y="176" fill="#15803d">• MongoDB Atlas Integration</text>
+      <text x="10" y="190" fill="#15803d">• Super Admin Control Panel</text>
+
+      <rect x="0" y="210" width="190" height="60" rx="8" fill="#f0fdf4" stroke="#86efac" />
+      <text x="10" y="230" font-weight="bold" fill="#166534">Release v2.5 (Resilient):</text>
+      <text x="10" y="246" fill="#15803d">• 60ms Offline Data Fallback</text>
+      <text x="10" y="260" fill="#15803d">• Auto-reconnect Atlas Loop</text>
+      
+      <circle cx="95" cy="310" r="28" fill="#dcfce7" stroke="#10b981" stroke-width="2" />
+      <text x="95" y="315" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#166534">
+        100% DONE
+      </text>
+      <text x="95" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#0f766e">
+        SUBMISSION READY
+      </text>
+    </g>
+  </g>
+
+  <!-- Bottom Comparison Card: Why Agile vs Waterfall -->
+  <g transform="translate(60, 680)">
+    <rect x="0" y="0" width="1280" height="130" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)" />
+    <rect x="0" y="0" width="1280" height="34" rx="14" fill="url(#primaryGrad)" />
+    <text x="30" y="23" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="13" fill="#ffffff">
+      JUSTIFICATION FOR SELECTING AGILE SCRUM OVER WATERFALL FOR ANSARI TUTORIAL
+    </text>
+
+    <g transform="translate(25, 48)" font-family="Arial, sans-serif" font-size="12" fill="#334155">
+      <text x="0" y="15" font-weight="bold" fill="#1e3a8a">1. Fast Turnaround (Same-Day Submission):</text>
+      <text x="0" y="32">Enables simultaneous frontend polishing while configuring backend and database auto-fallback.</text>
+      
+      <text x="430" y="15" font-weight="bold" fill="#1e3a8a">2. Iterative Stakeholder Feedback:</text>
+      <text x="430" y="32">Instant integration of verified credentials (2019 founding, Sir's English degree, pamphlet features).</text>
+      
+      <text x="880" y="15" font-weight="bold" fill="#1e3a8a">3. High Resilience &amp; Fault Tolerance:</text>
+      <text x="880" y="32">Allowed building a non-blocking offline mock layer so website stays 100% active during Atlas whitelisting.</text>
+    </g>
+  </g>
+</svg>

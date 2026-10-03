@@ -1,0 +1,306 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" width="1500" height="900">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="headerGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b224d" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="barBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="barPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+    <linearGradient id="barGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="barAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="barCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0e7490" />
+    </linearGradient>
+    <filter id="shadow3" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <rect width="1500" height="900" fill="url(#bgGrad3)" />
+
+  <!-- Top Title Banner -->
+  <rect x="35" y="25" width="1430" height="75" rx="14" fill="url(#headerGrad3)" filter="url(#shadow3)" />
+  <text x="65" y="60" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff">
+    PROJECT TIMELINE &amp; GANTT CHART
+  </text>
+  <text x="65" y="85" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="13" fill="#93c5fd">
+    Ansari Tutorial Educational Portal | 8-Week Agile Sprint Schedule &amp; Milestone Roadmap
+  </text>
+  <rect x="1270" y="42" width="175" height="38" rx="19" fill="#f59e0b" />
+  <text x="1357" y="66" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#0b224d">
+    STATUS: ON-TRACK
+  </text>
+
+  <!-- Main Gantt Container Table -->
+  <g transform="translate(35, 120)">
+    <!-- Container background -->
+    <rect x="0" y="0" width="1430" height="660" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow3)" />
+
+    <!-- Table Header Row -->
+    <rect x="0" y="0" width="1430" height="50" rx="12" fill="#0f172a" />
+    <rect x="0" y="30" width="1430" height="20" fill="#0f172a" /> <!-- flatten bottom corners -->
+
+    <!-- Header Column Titles -->
+    <text x="25" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="13" fill="#ffffff">
+      WBS #
+    </text>
+    <text x="90" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="13" fill="#ffffff">
+      TASK / DELIVERABLE
+    </text>
+    <text x="390" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="13" fill="#ffffff">
+      LEAD
+    </text>
+    <text x="475" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="13" fill="#ffffff">
+      PROGRESS
+    </text>
+
+    <!-- Timeline Header: 8 Weeks (from x=560 to 1400 => width 840 => 105px per week) -->
+    <!-- Sprints: Sprint 1 (W1-W2), Sprint 2 (W3-W4), Sprint 3 (W5-W6), Sprint 4 (W7-W8) -->
+    <g transform="translate(560, 0)">
+      <!-- Sprint Markers Top Sub-bar -->
+      <rect x="0" y="0" width="210" height="22" fill="#1e293b" />
+      <text x="105" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#93c5fd">SPRINT 1 (Foundation)</text>
+      
+      <rect x="210" y="0" width="210" height="22" fill="#334155" />
+      <text x="315" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#a7f3d0">SPRINT 2 (Backend &amp; DB)</text>
+
+      <rect x="420" y="0" width="210" height="22" fill="#1e293b" />
+      <text x="525" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#fde68a">SPRINT 3 (Modules)</text>
+
+      <rect x="630" y="0" width="210" height="22" fill="#334155" />
+      <text x="735" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#fecdd3">SPRINT 4 (QA &amp; Release)</text>
+
+      <!-- Week Labels Lower Sub-bar -->
+      <g transform="translate(0, 36)" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#cbd5e1" text-anchor="middle">
+        <text x="52">WEEK 1</text>
+        <text x="157">WEEK 2</text>
+        <text x="262">WEEK 3</text>
+        <text x="367">WEEK 4</text>
+        <text x="472">WEEK 5</text>
+        <text x="577">WEEK 6</text>
+        <text x="682">WEEK 7</text>
+        <text x="787">WEEK 8</text>
+      </g>
+    </g>
+
+    <!-- Vertical Grid Lines across timeline -->
+    <g transform="translate(560, 50)" stroke="#f1f5f9" stroke-width="1.5">
+      <line x1="0" y1="0" x2="0" y2="610" />
+      <line x1="105" y1="0" x2="105" y2="610" />
+      <line x1="210" y1="0" x2="210" y2="610" />
+      <line x1="315" y1="0" x2="315" y2="610" />
+      <line x1="420" y1="0" x2="420" y2="610" />
+      <line x1="525" y1="0" x2="525" y2="610" />
+      <line x1="630" y1="0" x2="630" y2="610" />
+      <line x1="735" y1="0" x2="735" y2="610" />
+      <line x1="840" y1="0" x2="840" y2="610" />
+    </g>
+
+    <!-- Row Separators and Alternate Backgrounds -->
+    <!-- 11 Task Rows, each 52px high starting at y=50 -->
+    <!-- Row 1: Requirements & Interview -->
+    <g transform="translate(0, 50)">
+      <rect x="0" y="0" width="1430" height="52" fill="#ffffff" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.1</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Requirements &amp; Sir Faisal Interview</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">Lead / SME</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W1 (x=560, w=105) -->
+      <rect x="565" y="15" width="95" height="22" rx="6" fill="url(#barBlue)" filter="url(#shadow3)" />
+      <text x="612" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Days 1-7</text>
+    </g>
+
+    <!-- Row 2: UI/UX Wireframing -->
+    <g transform="translate(0, 102)">
+      <rect x="0" y="0" width="1430" height="52" fill="#f8fafc" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.2</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">UI/UX Wireframes &amp; Design System</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">UI Designer</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W1-W2 (x=610, w=150) -->
+      <rect x="615" y="15" width="150" height="22" rx="6" fill="url(#barPurple)" filter="url(#shadow3)" />
+      <text x="690" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Wireframing</text>
+    </g>
+
+    <!-- Row 3: Pamphlet & Brand Assets -->
+    <g transform="translate(0, 154)">
+      <rect x="0" y="0" width="1430" height="52" fill="#ffffff" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.3</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Brochure JPG &amp; Vector Branding Assets</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">UI Designer</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W2 (x=670, w=100) -->
+      <rect x="670" y="15" width="95" height="22" rx="6" fill="url(#barPurple)" filter="url(#shadow3)" />
+      <text x="717" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Assets</text>
+      <!-- Milestone 1 Marker -->
+      <polygon points="768,26 775,18 782,26 775,34" fill="#f59e0b" stroke="#b45309" stroke-width="1.5" />
+    </g>
+
+    <!-- Row 4: Express Core & Modular Routes -->
+    <g transform="translate(0, 206)">
+      <rect x="0" y="0" width="1430" height="52" fill="#f8fafc" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.4</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Express Core, Sessions &amp; Routing Engine</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">Fullstack Lead</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W3 (x=770, w=105) -->
+      <rect x="775" y="15" width="100" height="22" rx="6" fill="url(#barGreen)" filter="url(#shadow3)" />
+      <text x="825" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Express API</text>
+    </g>
+
+    <!-- Row 5: Database Modeling & MongoDB Atlas -->
+    <g transform="translate(0, 258)">
+      <rect x="0" y="0" width="1430" height="52" fill="#ffffff" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.5</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">MongoDB Atlas Schemas &amp; Cluster Setup</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">DB Architect</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W3-W4 (x=820, w=150) -->
+      <rect x="825" y="15" width="145" height="22" rx="6" fill="url(#barAmber)" filter="url(#shadow3)" />
+      <text x="897" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Atlas Cloud</text>
+    </g>
+
+    <!-- Row 6: Resilient Fallback Engine -->
+    <g transform="translate(0, 310)">
+      <rect x="0" y="0" width="1430" height="52" fill="#f8fafc" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.6</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">High-Speed Resilient Fallback &amp; Seeders</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">Fullstack Lead</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W4 (x=880, w=100) -->
+      <rect x="880" y="15" width="95" height="22" rx="6" fill="url(#barAmber)" filter="url(#shadow3)" />
+      <text x="927" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Fallback</text>
+      <!-- Milestone 2 Marker -->
+      <polygon points="978,26 985,18 992,26 985,34" fill="#f59e0b" stroke="#b45309" stroke-width="1.5" />
+    </g>
+
+    <!-- Row 7: Public Web Pages & Course Catalog -->
+    <g transform="translate(0, 362)">
+      <rect x="0" y="0" width="1430" height="52" fill="#ffffff" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.7</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Public Portal (Home, About, 5-Stream Courses)</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">UI / Dev</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W5 (x=985, w=105) -->
+      <rect x="985" y="15" width="100" height="22" rx="6" fill="url(#barCyan)" filter="url(#shadow3)" />
+      <text x="1035" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Pages &amp; Catalog</text>
+    </g>
+
+    <!-- Row 8: Admission & WhatsApp Integration -->
+    <g transform="translate(0, 414)">
+      <rect x="0" y="0" width="1430" height="52" fill="#f8fafc" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.8</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Online Admission Workflow &amp; WhatsApp Connect</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">Fullstack Lead</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W5-W6 (x=1040, w=150) -->
+      <rect x="1040" y="15" width="145" height="22" rx="6" fill="url(#barCyan)" filter="url(#shadow3)" />
+      <text x="1112" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Admission Leads</text>
+    </g>
+
+    <!-- Row 9: Student & Admin Portals -->
+    <g transform="translate(0, 466)">
+      <rect x="0" y="0" width="1430" height="52" fill="#ffffff" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.9</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Student &amp; Super Admin Management Dashboard</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">Fullstack Lead</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W6-W7 (x=1140, w=150) -->
+      <rect x="1145" y="15" width="145" height="22" rx="6" fill="url(#barBlue)" filter="url(#shadow3)" />
+      <text x="1217" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Admin Portals</text>
+      <!-- Milestone 3 Marker -->
+      <polygon points="1293,26 1300,18 1307,26 1300,34" fill="#f59e0b" stroke="#b45309" stroke-width="1.5" />
+    </g>
+
+    <!-- Row 10: System QA & Performance Benchmarking -->
+    <g transform="translate(0, 518)">
+      <rect x="0" y="0" width="1430" height="52" fill="#f8fafc" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.10</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Route Verification, Failover &amp; Mobile QA</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">QA Tester</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W7-W8 (x=1245, w=110) -->
+      <rect x="1250" y="15" width="100" height="22" rx="6" fill="url(#barGreen)" filter="url(#shadow3)" />
+      <text x="1300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">QA Testing</text>
+    </g>
+
+    <!-- Row 11: Final Deployment & Submission -->
+    <g transform="translate(0, 570)">
+      <rect x="0" y="0" width="1430" height="52" fill="#ffffff" />
+      <line x1="0" y1="52" x2="1430" y2="52" stroke="#e2e8f0" />
+      <text x="25" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="12" fill="#64748b">1.11</text>
+      <text x="90" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="12" fill="#1e293b">Production Launch, SDLC Docs &amp; Black Book</text>
+      <text x="390" y="32" font-family="Arial, sans-serif" font-size="11.5" fill="#475569">All Team</text>
+      <rect x="475" y="16" width="60" height="22" rx="11" fill="#dcfce7" />
+      <text x="505" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#15803d">100%</text>
+      <!-- Gantt Bar: W8 (x=1300, w=95) -->
+      <rect x="1300" y="15" width="95" height="22" rx="6" fill="url(#barBlue)" filter="url(#shadow3)" />
+      <text x="1347" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Launch</text>
+      <!-- Final Milestone Star -->
+      <polygon points="1398,26 1405,18 1412,26 1405,34" fill="#10b981" stroke="#047857" stroke-width="1.5" />
+    </g>
+
+    <!-- Bottom Milestone Legend inside table -->
+    <g transform="translate(25, 630)" font-family="Arial, sans-serif" font-size="11.5">
+      <polygon points="5,8 11,1 17,8 11,15" fill="#f59e0b" stroke="#b45309" />
+      <text x="25" y="12" font-weight="bold" fill="#1e293b">Key Milestones:</text>
+      <text x="125" y="12" fill="#475569">M1: Scope &amp; Brochure Finalized | M2: DB &amp; Resilient Engine | M3: Admin &amp; Student Portal | M4: Final Production Delivery</text>
+    </g>
+  </g>
+
+  <!-- Bottom Metric Summary Cards -->
+  <g transform="translate(35, 800)">
+    <rect x="0" y="0" width="340" height="70" rx="10" fill="#ffffff" stroke="#cbd5e1" filter="url(#shadow3)" />
+    <text x="20" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#64748b">TOTAL PROJECT DURATION</text>
+    <text x="20" y="55" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="800" fill="#0b224d">8 Weeks (4 Sprints)</text>
+
+    <rect x="360" y="0" width="340" height="70" rx="10" fill="#ffffff" stroke="#cbd5e1" filter="url(#shadow3)" />
+    <text x="380" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#64748b">SPRINT CADENCE</text>
+    <text x="380" y="55" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="800" fill="#1d4ed8">14 Days / Iteration</text>
+
+    <rect x="720" y="0" width="340" height="70" rx="10" fill="#ffffff" stroke="#cbd5e1" filter="url(#shadow3)" />
+    <text x="740" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#64748b">DELIVERABLE STATUS</text>
+    <text x="740" y="55" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="800" fill="#10b981">11 / 11 Completed (100%)</text>
+
+    <rect x="1080" y="0" width="385" height="70" rx="10" fill="#ffffff" stroke="#cbd5e1" filter="url(#shadow3)" />
+    <text x="1100" y="28" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#64748b">DEPLOYMENT HEALTH</text>
+    <text x="1100" y="55" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="800" fill="#059669">Port 3000 Active (200 OK)</text>
+  </g>
+</svg>

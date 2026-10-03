@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bgSeq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    <linearGradient id="topNavSeq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b224d" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="lifeActor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="lifeUI" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="lifeRoute" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="lifeDb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="lifeAtlas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0891b2" />
+      <stop offset="100%" stop-color="#0e7490" />
+    </linearGradient>
+    <linearGradient id="lifeAdmin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <filter id="seqShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="solidArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1e293b" />
+    </marker>
+    <marker id="dashArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#64748b" />
+    </marker>
+    <marker id="blueArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8" />
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bgSeq)" />
+
+  <!-- Top Title Banner -->
+  <rect x="40" y="25" width="1420" height="80" rx="14" fill="url(#topNavSeq)" filter="url(#seqShadow)" />
+  <text x="70" y="60" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff">
+    SYSTEM MODELING: UML SEQUENCE DIAGRAM
+  </text>
+  <text x="70" y="85" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="13" fill="#93c5fd">
+    Scenario: Student Online Admission Application &amp; Multi-Tier Processing | Ansari Tutorial Web Portal
+  </text>
+  <rect x="1230" y="45" width="200" height="38" rx="19" fill="#f59e0b" />
+  <text x="1330" y="69" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#0b224d">
+    INTERACTION FLOW
+  </text>
+
+  <!-- ==================== 6 LIFELINES (COLUMNS) ==================== -->
+  <!-- Col 1: Applicant (x=130) -->
+  <!-- Col 2: Admission UI (x=380) -->
+  <!-- Col 3: AdmissionController (x=630) -->
+  <!-- Col 4: Resilient DB Engine (x=880) -->
+  <!-- Col 5: MongoDB Atlas Cloud (x=1130) -->
+  <!-- Col 6: Super Admin (x=1380) -->
+
+  <!-- Lifeline Headers -->
+  <!-- Lifeline 1: Applicant -->
+  <g transform="translate(40, 130)" filter="url(#seqShadow)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="url(#lifeActor)" />
+    <text x="90" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="12" fill="#ffffff">:Applicant</text>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#bfdbfe">(Student / Parent)</text>
+  </g>
+
+  <!-- Lifeline 2: UI View -->
+  <g transform="translate(290, 130)" filter="url(#seqShadow)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="url(#lifeUI)" />
+    <text x="90" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="12" fill="#ffffff">:AdmissionView</text>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a7f3d0">(EJS &amp; Bootstrap)</text>
+  </g>
+
+  <!-- Lifeline 3: Controller -->
+  <g transform="translate(540, 130)" filter="url(#seqShadow)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="url(#lifeRoute)" />
+    <text x="90" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="12" fill="#ffffff">:AdmissionRouter</text>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ddd6fe">(Express Server)</text>
+  </g>
+
+  <!-- Lifeline 4: DB Service -->
+  <g transform="translate(790, 130)" filter="url(#seqShadow)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="url(#lifeDb)" />
+    <text x="90" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="12" fill="#ffffff">:ResilientService</text>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fde68a">(db.js Fallback)</text>
+  </g>
+
+  <!-- Lifeline 5: MongoDB Atlas -->
+  <g transform="translate(1040, 130)" filter="url(#seqShadow)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="url(#lifeAtlas)" />
+    <text x="90" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="12" fill="#ffffff">:MongoDBAtlas</text>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a5f3fc">(AWS Cluster)</text>
+  </g>
+
+  <!-- Lifeline 6: Super Admin -->
+  <g transform="translate(1290, 130)" filter="url(#seqShadow)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="url(#lifeAdmin)" />
+    <text x="90" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="12" fill="#ffffff">:SuperAdmin</text>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fecdd3">(Sir Faisal Ansari)</text>
+  </g>
+
+  <!-- Vertical Dashed Lines (Lifelines) -->
+  <g stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="6 6">
+    <line x1="130" y1="180" x2="130" y2="920" />
+    <line x1="380" y1="180" x2="380" y2="920" />
+    <line x1="630" y1="180" x2="630" y2="920" />
+    <line x1="880" y1="180" x2="880" y2="920" />
+    <line x1="1130" y1="180" x2="1130" y2="920" />
+    <line x1="1380" y1="180" x2="1380" y2="920" />
+  </g>
+
+  <!-- ==================== MESSAGES & ACTIVATION BARS ==================== -->
+
+  <!-- 1. Request Admission Page -->
+  <g transform="translate(0, 220)">
+    <line x1="130" y1="0" x2="380" y2="0" stroke="#1e293b" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="255" y="-8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">
+      1: GET /admission
+    </text>
+  </g>
+
+  <!-- 2. Return View -->
+  <g transform="translate(0, 255)">
+    <line x1="380" y1="0" x2="130" y2="0" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#dashArr)" />
+    <text x="255" y="-8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#475569">
+      2: 200 OK (Render Admission Form &amp; Course Catalog)
+    </text>
+  </g>
+
+  <!-- 3. Submit Form -->
+  <g transform="translate(0, 310)">
+    <!-- Activation Bar on UI -->
+    <rect x="372" y="0" width="16" height="380" rx="3" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5" />
+    <line x1="130" y1="15" x2="372" y2="15" stroke="#1e293b" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="251" y="7" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">
+      3: Submit Form (Name, Phone, Stream, SlowLearner)
+    </text>
+  </g>
+
+  <!-- 4. Client Validation self-call -->
+  <g transform="translate(0, 355)">
+    <path d="M 388 0 L 425 0 L 425 25 L 388 25" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="435" y="16" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#059669">
+      4: validateFields(phone, email)
+    </text>
+  </g>
+
+  <!-- 5. POST to Router -->
+  <g transform="translate(0, 410)">
+    <!-- Activation Bar on Controller -->
+    <rect x="622" y="0" width="16" height="230" rx="3" fill="#e9d5ff" stroke="#7c3aed" stroke-width="1.5" />
+    <line x1="388" y1="15" x2="622" y2="15" stroke="#7c3aed" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="505" y="7" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#6d28d9">
+      5: POST /admission (FormData)
+    </text>
+  </g>
+
+  <!-- 6. Check DB Connectivity -->
+  <g transform="translate(0, 455)">
+    <!-- Activation Bar on Resilient Service -->
+    <rect x="872" y="0" width="16" height="150" rx="3" fill="#fef08a" stroke="#d97706" stroke-width="1.5" />
+    <line x1="638" y1="15" x2="872" y2="15" stroke="#b45309" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="755" y="7" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#b45309">
+      6: isConnected() &amp; saveApplication()
+    </text>
+  </g>
+
+  <!-- ==================== ALT FRAME: ONLINE VS FALLBACK ==================== -->
+  <g transform="translate(600, 500)">
+    <rect x="0" y="0" width="560" height="145" rx="8" fill="#ffffff" fill-opacity="0.9" stroke="#0284c7" stroke-width="1.8" />
+    <rect x="0" y="0" width="70" height="24" rx="4" fill="#0284c7" />
+    <text x="35" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#ffffff">alt</text>
+    <text x="80" y="16" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#0369a1">[Database Connected: Atlas Active]</text>
+
+    <!-- Atlas Save -->
+    <line x1="288" y1="35" x2="522" y2="35" stroke="#0891b2" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="405" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#0e7490">
+      7a: db.admissions.insertOne(doc)
+    </text>
+
+    <line x1="522" y1="60" x2="288" y2="60" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#dashArr)" />
+    <text x="405" y="53" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#0e7490">
+      writeAcknowledged (201 Created)
+    </text>
+
+    <!-- Dividing Line inside alt -->
+    <line x1="0" y1="75" x2="560" y2="75" stroke="#94a3b8" stroke-dasharray="5 4" />
+    <text x="80" y="92" font-family="Arial, sans-serif" font-weight="bold" font-size="10.5" fill="#d97706">[Database Offline / Whitelisting]</text>
+
+    <!-- Fallback Buffer -->
+    <path d="M 288 105 L 340 105 L 340 125 L 288 125" fill="none" stroke="#d97706" stroke-width="1.8" marker-end="url(#solidArr)" />
+    <text x="350" y="118" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#b45309">
+      7b: Buffer lead in memory &amp; log fallback
+    </text>
+  </g>
+
+  <!-- 8. Return response to Controller -->
+  <g transform="translate(0, 680)">
+    <line x1="872" y1="0" x2="638" y2="0" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#dashArr)" />
+    <text x="755" y="-8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#475569">
+      8: Confirmation Payload (Success Status)
+    </text>
+  </g>
+
+  <!-- 9. Session Flash & 302 Redirect -->
+  <g transform="translate(0, 720)">
+    <line x1="622" y1="0" x2="388" y2="0" stroke="#7c3aed" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#dashArr)" />
+    <text x="505" y="-8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#6d28d9">
+      9: HTTP 302 (Redirect + Session Success Flash)
+    </text>
+  </g>
+
+  <!-- 10. Display Success to Applicant -->
+  <g transform="translate(0, 765)">
+    <line x1="372" y1="0" x2="130" y2="0" stroke="#059669" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="251" y="-8" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#047857">
+      10: Render Success Alert + WhatsApp Helpline CTA
+    </text>
+  </g>
+
+  <!-- 11. Admin Real-Time Review -->
+  <g transform="translate(0, 830)">
+    <!-- Activation Bar on Admin -->
+    <rect x="1372" y="0" width="16" height="70" rx="3" fill="#fecdd3" stroke="#dc2626" stroke-width="1.5" />
+    <line x1="1130" y1="15" x2="1372" y2="15" stroke="#dc2626" stroke-width="2" marker-end="url(#solidArr)" />
+    <text x="1251" y="7" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#991b1b">
+      11: GET /admin/admissions (Fetch New Inquiries)
+    </text>
+
+    <line x1="1372" y1="50" x2="1130" y2="50" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#dashArr)" />
+    <text x="1251" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">
+      12: Display Student Contact &amp; Stream for Counselor Followup
+    </text>
+  </g>
+
+  <!-- Bottom Notation Bar -->
+  <g transform="translate(40, 940)">
+    <rect x="0" y="0" width="1420" height="35" rx="8" fill="#f1f5f9" stroke="#cbd5e1" />
+    <text x="20" y="22" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">UML NOTATION:</text>
+    <line x1="120" y1="18" x2="170" y2="18" stroke="#1e293b" stroke-width="2" />
+    <text x="180" y="22" font-family="Arial, sans-serif" font-size="11" fill="#475569">Synchronous Call</text>
+    <line x1="290" y1="18" x2="340" y2="18" stroke="#64748b" stroke-width="2" stroke-dasharray="4 3" />
+    <text x="350" y="22" font-family="Arial, sans-serif" font-size="11" fill="#475569">Return / Reply Message</text>
+    <rect x="495" y="10" width="16" height="16" fill="#e9d5ff" stroke="#7c3aed" />
+    <text x="520" y="22" font-family="Arial, sans-serif" font-size="11" fill="#475569">Activation Bar (Focus of Control)</text>
+    <rect x="710" y="10" width="30" height="16" rx="3" fill="#0284c7" />
+    <text x="750" y="22" font-family="Arial, sans-serif" font-size="11" fill="#475569">Alt Frame (Conditional Fallback Logic)</text>
+  </g>
+</svg>

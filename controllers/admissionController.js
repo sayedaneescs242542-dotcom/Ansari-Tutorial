@@ -45,8 +45,7 @@ exports.postAdmissionForm = async (req, res) => {
             previousPercentage,
             gender,
             dob,
-            address,
-            batchPreference
+            address
         } = req.body;
 
         let effectiveStream = stream;
@@ -105,11 +104,7 @@ exports.postAdmissionForm = async (req, res) => {
             previousPercentage: parseFloat(previousPercentage) || 0,
             gender: gender || "Male",
             dob: dob || "2008-01-01",
-            address: (address || "").trim(),
-            batchPreference: batchPreference || "Flexible",
-            status: "Pending",
-            remarks:
-                "Application received. Our counseling team will contact you shortly."
+            address: (address || "").trim()
         };
 
         console.log("📋 Admission submission received");

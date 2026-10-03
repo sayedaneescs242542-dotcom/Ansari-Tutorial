@@ -75,4 +75,17 @@ router.get("/about", (req, res) => {
     res.render("about", { title: "About Us - Ansari Tutorial" });
 });
 
+// UML & System Modeling Diagrams Route
+router.get("/uml-diagrams", (req, res) => {
+    res.render("uml", { 
+        title: "System Modeling & UML Diagrams - Ansari Tutorial",
+        pdfPath: "/docs/Ansari_Tutorial_UML_Report.pdf"
+    });
+});
+
+// Shortcut redirect
+router.get("/uml", (req, res) => {
+    res.redirect("/uml-diagrams");
+});
+
 module.exports = router;

@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bgClass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#edf2f7" />
+    </linearGradient>
+    <linearGradient id="topNavClass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b224d" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="headerAdmin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="headerCourse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="headerStudent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="headerAdmission" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="headerNotice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#5b21b6" />
+    </linearGradient>
+    <linearGradient id="headerDb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0891b2" />
+      <stop offset="100%" stop-color="#0e7490" />
+    </linearGradient>
+    <filter id="cShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+    <marker id="assocArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bgClass)" />
+
+  <!-- Top Title Banner -->
+  <rect x="40" y="25" width="1420" height="80" rx="14" fill="url(#topNavClass)" filter="url(#cShadow)" />
+  <text x="70" y="60" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff">
+    SYSTEM MODELING: UML CLASS DIAGRAM
+  </text>
+  <text x="70" y="85" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="13" fill="#93c5fd">
+    Architecture: Mongoose ODM Data Models, Schemas &amp; Express Services | Ansari Tutorial Web Portal
+  </text>
+  <rect x="1240" y="45" width="190" height="38" rx="19" fill="#f59e0b" />
+  <text x="1335" y="69" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#0b224d">
+    CLASS SCHEMAS
+  </text>
+
+  <!-- ==================== CLASS 1: ADMIN (Top Center) ==================== -->
+  <g transform="translate(560, 130)" filter="url(#cShadow)">
+    <rect x="0" y="0" width="380" height="235" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Header -->
+    <rect x="0" y="0" width="380" height="42" rx="10" fill="url(#headerAdmin)" />
+    <rect x="0" y="26" width="380" height="16" fill="url(#headerAdmin)" />
+    <text x="190" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      Admin (Mongoose Model)
+    </text>
+    <!-- Attributes -->
+    <g transform="translate(16, 58)" font-family="Consolas, monospace" font-size="11" fill="#1e293b">
+      <text x="0" y="0">- _id: ObjectId</text>
+      <text x="0" y="16">- name: String = "Sir Faisal Ansari"</text>
+      <text x="0" y="32">- email: String = "admin@ansaritutorial.com"</text>
+      <text x="0" y="48">- passwordHash: String (Bcrypt)</text>
+      <text x="0" y="64">- role: String = "Super Admin"</text>
+      <text x="0" y="80">- qualification: String = "Graduate in English"</text>
+    </g>
+    <!-- Divider -->
+    <line x1="0" y1="152" x2="380" y2="152" stroke="#e2e8f0" stroke-width="1.5" />
+    <!-- Methods -->
+    <g transform="translate(16, 170)" font-family="Consolas, monospace" font-size="11" fill="#0369a1">
+      <text x="0" y="0">+ authenticate(password): Promise&lt;Boolean&gt;</text>
+      <text x="0" y="16">+ createCourse(data): Promise&lt;Course&gt;</text>
+      <text x="0" y="32">+ updateNotice(id, data): Promise&lt;Announcement&gt;</text>
+      <text x="0" y="48">+ reviewAdmission(id, status): Promise&lt;Void&gt;</text>
+    </g>
+  </g>
+
+  <!-- ==================== CLASS 2: COURSE (Left Middle) ==================== -->
+  <g transform="translate(60, 420)" filter="url(#cShadow)">
+    <rect x="0" y="0" width="390" height="265" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Header -->
+    <rect x="0" y="0" width="390" height="42" rx="10" fill="url(#headerCourse)" />
+    <rect x="0" y="26" width="390" height="16" fill="url(#headerCourse)" />
+    <text x="195" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      Course (Mongoose Model)
+    </text>
+    <!-- Attributes -->
+    <g transform="translate(16, 58)" font-family="Consolas, monospace" font-size="11" fill="#1e293b">
+      <text x="0" y="0">- _id: ObjectId</text>
+      <text x="0" y="16">- title: String</text>
+      <text x="0" y="32">- stream: Enum [School, Commerce, Science, Arts, CA]</text>
+      <text x="0" y="48">- standard: String (5th-10th, FYJC, SYJC, Degree)</text>
+      <text x="0" y="64">- subjects: Array&lt;String&gt;</text>
+      <text x="0" y="80">- duration: String = "1 Academic Year"</text>
+      <text x="0" y="96">- fees: Number</text>
+      <text x="0" y="112">- slowLearnersSpecialCare: Boolean = true</text>
+    </g>
+    <!-- Divider -->
+    <line x1="0" y1="184" x2="390" y2="184" stroke="#e2e8f0" stroke-width="1.5" />
+    <!-- Methods -->
+    <g transform="translate(16, 204)" font-family="Consolas, monospace" font-size="11" fill="#0369a1">
+      <text x="0" y="0">+ getByStream(streamName): Array&lt;Course&gt;</text>
+      <text x="0" y="16">+ getFeeStructure(): String</text>
+      <text x="0" y="32">+ isAvailable(): Boolean</text>
+    </g>
+  </g>
+
+  <!-- ==================== CLASS 3: ADMISSION APPLICATION (Center Middle) ==================== -->
+  <g transform="translate(560, 420)" filter="url(#cShadow)">
+    <rect x="0" y="0" width="380" height="265" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Header -->
+    <rect x="0" y="0" width="380" height="42" rx="10" fill="url(#headerAdmission)" />
+    <rect x="0" y="26" width="380" height="16" fill="url(#headerAdmission)" />
+    <text x="190" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      AdmissionApplication (Model)
+    </text>
+    <!-- Attributes -->
+    <g transform="translate(16, 58)" font-family="Consolas, monospace" font-size="11" fill="#1e293b">
+      <text x="0" y="0">- _id: ObjectId</text>
+      <text x="0" y="16">- studentName: String</text>
+      <text x="0" y="32">- guardianName: String</text>
+      <text x="0" y="48">- contactNumber: String</text>
+      <text x="0" y="64">- email: String</text>
+      <text x="0" y="80">- courseStream: String</text>
+      <text x="0" y="96">- standard: String</text>
+      <text x="0" y="112">- status: Enum [Pending, Contacted, Enrolled]</text>
+    </g>
+    <!-- Divider -->
+    <line x1="0" y1="184" x2="380" y2="184" stroke="#e2e8f0" stroke-width="1.5" />
+    <!-- Methods -->
+    <g transform="translate(16, 204)" font-family="Consolas, monospace" font-size="11" fill="#0369a1">
+      <text x="0" y="0">+ submitOnlineApplication(): Promise&lt;Boolean&gt;</text>
+      <text x="0" y="16">+ updateStatus(newStatus): Promise&lt;Void&gt;</text>
+      <text x="0" y="32">+ sendCounselorAlert(): Void</text>
+    </g>
+  </g>
+
+  <!-- ==================== CLASS 4: ANNOUNCEMENT (Right Middle) ==================== -->
+  <g transform="translate(1040, 420)" filter="url(#cShadow)">
+    <rect x="0" y="0" width="380" height="265" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Header -->
+    <rect x="0" y="0" width="380" height="42" rx="10" fill="url(#headerNotice)" />
+    <rect x="0" y="26" width="380" height="16" fill="url(#headerNotice)" />
+    <text x="190" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      Announcement (Mongoose Model)
+    </text>
+    <!-- Attributes -->
+    <g transform="translate(16, 58)" font-family="Consolas, monospace" font-size="11" fill="#1e293b">
+      <text x="0" y="0">- _id: ObjectId</text>
+      <text x="0" y="16">- title: String</text>
+      <text x="0" y="32">- category: Enum [Exam, Admission, Holiday]</text>
+      <text x="0" y="48">- priority: Enum [Urgent, Normal]</text>
+      <text x="0" y="64">- content: String</text>
+      <text x="0" y="80">- publishDate: Date</text>
+      <text x="0" y="96">- isActive: Boolean = true</text>
+      <text x="0" y="112">- authorAdminId: ObjectId</text>
+    </g>
+    <!-- Divider -->
+    <line x1="0" y1="184" x2="380" y2="184" stroke="#e2e8f0" stroke-width="1.5" />
+    <!-- Methods -->
+    <g transform="translate(16, 204)" font-family="Consolas, monospace" font-size="11" fill="#0369a1">
+      <text x="0" y="0">+ getActiveNotices(): Array&lt;Announcement&gt;</text>
+      <text x="0" y="16">+ markAsArchived(): Promise&lt;Void&gt;</text>
+    </g>
+  </g>
+
+  <!-- ==================== CLASS 5: STUDENT (Bottom Left) ==================== -->
+  <g transform="translate(60, 740)" filter="url(#cShadow)">
+    <rect x="0" y="0" width="390" height="210" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Header -->
+    <rect x="0" y="0" width="390" height="42" rx="10" fill="url(#headerStudent)" />
+    <rect x="0" y="26" width="390" height="16" fill="url(#headerStudent)" />
+    <text x="195" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      Student (Mongoose Model)
+    </text>
+    <!-- Attributes -->
+    <g transform="translate(16, 58)" font-family="Consolas, monospace" font-size="11" fill="#1e293b">
+      <text x="0" y="0">- _id: ObjectId</text>
+      <text x="0" y="16">- fullName: String</text>
+      <text x="0" y="32">- email: String</text>
+      <text x="0" y="48">- enrolledCourseId: ObjectId</text>
+      <text x="0" y="64">- registrationDate: Date</text>
+    </g>
+    <!-- Divider -->
+    <line x1="0" y1="135" x2="390" y2="135" stroke="#e2e8f0" stroke-width="1.5" />
+    <!-- Methods -->
+    <g transform="translate(16, 155)" font-family="Consolas, monospace" font-size="11" fill="#0369a1">
+      <text x="0" y="0">+ register(studentData): Promise&lt;Student&gt;</text>
+      <text x="0" y="16">+ login(credentials): Promise&lt;Boolean&gt;</text>
+      <text x="0" y="32">+ getEnrolledCourses(): Course</text>
+    </g>
+  </g>
+
+  <!-- ==================== CLASS 6: DATABASE SERVICE & FALLBACK (Bottom Right) ==================== -->
+  <g transform="translate(560, 740)" filter="url(#cShadow)">
+    <rect x="0" y="0" width="860" height="210" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Header -->
+    <rect x="0" y="0" width="860" height="42" rx="10" fill="url(#headerDb)" />
+    <rect x="0" y="26" width="860" height="16" fill="url(#headerDb)" />
+    <text x="430" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      DatabaseService (Resilient Architecture &amp; Auto-Reconnect)
+    </text>
+    <!-- Attributes -->
+    <g transform="translate(20, 58)" font-family="Consolas, monospace" font-size="11" fill="#1e293b">
+      <text x="0" y="0">+ isDbConnected: Boolean = false</text>
+      <text x="0" y="16">+ retryTimer: Timeout (20s interval auto-ping)</text>
+      <text x="0" y="32">+ defaultCourses: Array&lt;Course&gt; (From verified center pamphlet)</text>
+      <text x="0" y="48">+ defaultAnnouncements: Array&lt;Announcement&gt;</text>
+    </g>
+    <!-- Divider -->
+    <line x1="0" y1="125" x2="860" y2="125" stroke="#e2e8f0" stroke-width="1.5" />
+    <!-- Methods -->
+    <g transform="translate(20, 145)" font-family="Consolas, monospace" font-size="11" fill="#0369a1">
+      <text x="0" y="0">+ connectDB(): Promise&lt;Boolean&gt; // Atlas SRV with autoSelectFamily: false</text>
+      <text x="0" y="16">+ syncDatabaseDefaults(): Promise&lt;Void&gt; // Auto-seeds Super Admin &amp; Courses</text>
+      <text x="0" y="32">+ isConnected(): Boolean // Express res.locals helper</text>
+    </g>
+  </g>
+
+  <!-- ==================== RELATIONSHIPS & CARDINALITY ==================== -->
+
+  <!-- Admin to Course (1 to 0..*) -->
+  <path d="M 600 365 L 600 395 L 300 395 L 300 420" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#assocArrow)" />
+  <text x="610" y="380" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">1</text>
+  <text x="310" y="415" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">0..*</text>
+  <text x="420" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#64748b">manages &gt;</text>
+
+  <!-- Admin to AdmissionApplication (1 to 0..*) -->
+  <line x1="750" y1="365" x2="750" y2="420" stroke="#dc2626" stroke-width="2" marker-end="url(#assocArrow)" />
+  <text x="758" y="380" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">1</text>
+  <text x="758" y="415" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">0..*</text>
+  <text x="795" y="395" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#64748b">reviews</text>
+
+  <!-- Admin to Announcement (1 to 0..*) -->
+  <path d="M 900 365 L 900 395 L 1230 395 L 1230 420" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#assocArrow)" />
+  <text x="910" y="380" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">1</text>
+  <text x="1240" y="415" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">0..*</text>
+  <text x="1050" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#64748b">publishes &gt;</text>
+
+  <!-- AdmissionApplication to Course (0..* to 1) -->
+  <line x1="560" y1="550" x2="450" y2="550" stroke="#d97706" stroke-width="2" marker-end="url(#assocArrow)" />
+  <text x="540" y="542" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#d97706">0..*</text>
+  <text x="460" y="542" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#d97706">1</text>
+  <text x="500" y="565" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#64748b">applies for</text>
+
+  <!-- Student to Course (0..* to 1) -->
+  <line x1="250" y1="740" x2="250" y2="685" stroke="#059669" stroke-width="2" marker-end="url(#assocArrow)" />
+  <text x="258" y="730" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#059669">0..*</text>
+  <text x="258" y="700" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#059669">1</text>
+  <text x="290" y="715" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#64748b">enrolled in</text>
+
+  <!-- Bottom Legend -->
+  <g transform="translate(60, 965)">
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">
+      NOTATION:
+    </text>
+    <text x="80" y="15" font-family="Arial, sans-serif" font-size="11" fill="#475569">
+      - Private Attribute | + Public Method | 1..* One-to-Many Multiplicity | Arrows represent Directional Associations
+    </text>
+  </g>
+</svg>

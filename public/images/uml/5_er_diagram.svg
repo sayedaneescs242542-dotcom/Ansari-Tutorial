@@ -1,0 +1,344 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" width="1500" height="1000">
+  <defs>
+    <linearGradient id="bgEr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#edf2f7" />
+    </linearGradient>
+    <linearGradient id="topNavEr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b224d" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="entAdmin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <linearGradient id="entCourse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="entStudent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="entAdmit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="entNotice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <filter id="erShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <rect width="1500" height="1000" fill="url(#bgEr)" />
+
+  <!-- Top Title Banner -->
+  <rect x="40" y="25" width="1420" height="80" rx="14" fill="url(#topNavEr)" filter="url(#erShadow)" />
+  <text x="70" y="60" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff">
+    DATABASE MODELING: ENTITY-RELATIONSHIP (ER) DIAGRAM
+  </text>
+  <text x="70" y="85" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="13" fill="#93c5fd">
+    Relational Schema &amp; Mongoose Entities | Crow's Foot Notation | Ansari Tutorial System
+  </text>
+  <rect x="1230" y="45" width="200" height="38" rx="19" fill="#f59e0b" />
+  <text x="1330" y="69" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#0b224d">
+    CROW'S FOOT NOTATION
+  </text>
+
+  <!-- ==================== ENTITY 1: ADMIN (Top Center) ==================== -->
+  <g transform="translate(560, 130)" filter="url(#erShadow)">
+    <rect x="0" y="0" width="380" height="235" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Header -->
+    <rect x="0" y="0" width="380" height="40" rx="10" fill="url(#entAdmin)" />
+    <rect x="0" y="24" width="380" height="16" fill="url(#entAdmin)" />
+    <text x="190" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      ADMIN (Collection: admins)
+    </text>
+    <!-- Field Rows -->
+    <g transform="translate(14, 52)" font-family="Arial, sans-serif" font-size="11.5">
+      <!-- PK: admin_id -->
+      <rect x="0" y="0" width="352" height="24" fill="#fef2f2" />
+      <rect x="5" y="4" width="28" height="16" rx="4" fill="#ef4444" />
+      <text x="19" y="16" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">PK</text>
+      <text x="42" y="16" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">_id</text>
+      <text x="240" y="16" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+
+      <text x="42" y="40" font-family="Consolas, monospace" fill="#1e293b">name ("Sir Faisal Ansari")</text>
+      <text x="240" y="40" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="64" font-family="Consolas, monospace" fill="#1e293b">email ("admin@...")</text>
+      <text x="240" y="64" font-family="Consolas, monospace" fill="#64748b">String (Unique)</text>
+
+      <text x="42" y="88" font-family="Consolas, monospace" fill="#1e293b">password_hash</text>
+      <text x="240" y="88" font-family="Consolas, monospace" fill="#64748b">String (Bcrypt)</text>
+
+      <text x="42" y="112" font-family="Consolas, monospace" fill="#1e293b">role ("Super Admin")</text>
+      <text x="240" y="112" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="136" font-family="Consolas, monospace" fill="#1e293b">qualification ("Graduate")</text>
+      <text x="240" y="136" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="160" font-family="Consolas, monospace" fill="#1e293b">created_at</text>
+      <text x="240" y="160" font-family="Consolas, monospace" fill="#64748b">Date</text>
+    </g>
+  </g>
+
+  <!-- ==================== ENTITY 2: COURSE (Left Middle) ==================== -->
+  <g transform="translate(60, 420)" filter="url(#erShadow)">
+    <rect x="0" y="0" width="390" height="280" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="0" y="0" width="390" height="40" rx="10" fill="url(#entCourse)" />
+    <rect x="0" y="24" width="390" height="16" fill="url(#entCourse)" />
+    <text x="195" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      COURSE (Collection: courses)
+    </text>
+    <g transform="translate(14, 52)" font-family="Arial, sans-serif" font-size="11.5">
+      <!-- PK: course_id -->
+      <rect x="0" y="0" width="362" height="24" fill="#eff6ff" />
+      <rect x="5" y="4" width="28" height="16" rx="4" fill="#3b82f6" />
+      <text x="19" y="16" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">PK</text>
+      <text x="42" y="16" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">_id</text>
+      <text x="240" y="16" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+
+      <text x="42" y="40" font-family="Consolas, monospace" fill="#1e293b">title</text>
+      <text x="240" y="40" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="64" font-family="Consolas, monospace" fill="#1e293b">stream (School, Comm, Sci...)</text>
+      <text x="240" y="64" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="88" font-family="Consolas, monospace" fill="#1e293b">standard (5-10, 11, 12, Deg)</text>
+      <text x="240" y="88" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="112" font-family="Consolas, monospace" fill="#1e293b">subjects</text>
+      <text x="240" y="112" font-family="Consolas, monospace" fill="#64748b">Array&lt;String&gt;</text>
+
+      <text x="42" y="136" font-family="Consolas, monospace" fill="#1e293b">fees</text>
+      <text x="240" y="136" font-family="Consolas, monospace" fill="#64748b">Number</text>
+
+      <text x="42" y="160" font-family="Consolas, monospace" fill="#1e293b">duration ("1 Year")</text>
+      <text x="240" y="160" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="184" font-family="Consolas, monospace" fill="#1e293b">slow_learners_focus</text>
+      <text x="240" y="184" font-family="Consolas, monospace" fill="#64748b">Boolean</text>
+
+      <!-- FK: created_by_admin -->
+      <rect x="5" y="196" width="28" height="16" rx="4" fill="#94a3b8" />
+      <text x="19" y="208" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">FK</text>
+      <text x="42" y="208" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">created_by_admin</text>
+      <text x="240" y="208" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+    </g>
+  </g>
+
+  <!-- ==================== ENTITY 3: ADMISSION INQUIRY (Center Middle) ==================== -->
+  <g transform="translate(560, 420)" filter="url(#erShadow)">
+    <rect x="0" y="0" width="380" height="280" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="0" y="0" width="380" height="40" rx="10" fill="url(#entAdmit)" />
+    <rect x="0" y="24" width="380" height="16" fill="url(#entAdmit)" />
+    <text x="190" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      ADMISSION (Collection: admissions)
+    </text>
+    <g transform="translate(14, 52)" font-family="Arial, sans-serif" font-size="11.5">
+      <!-- PK: inquiry_id -->
+      <rect x="0" y="0" width="352" height="24" fill="#fffbeb" />
+      <rect x="5" y="4" width="28" height="16" rx="4" fill="#f59e0b" />
+      <text x="19" y="16" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">PK</text>
+      <text x="42" y="16" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">_id</text>
+      <text x="240" y="16" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+
+      <text x="42" y="40" font-family="Consolas, monospace" fill="#1e293b">student_name</text>
+      <text x="240" y="40" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="64" font-family="Consolas, monospace" fill="#1e293b">guardian_name</text>
+      <text x="240" y="64" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="88" font-family="Consolas, monospace" fill="#1e293b">contact_no (76668...)</text>
+      <text x="240" y="88" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="112" font-family="Consolas, monospace" fill="#1e293b">email</text>
+      <text x="240" y="112" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="136" font-family="Consolas, monospace" fill="#1e293b">course_stream</text>
+      <text x="240" y="136" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="160" font-family="Consolas, monospace" fill="#1e293b">status (Pending/Enrolled)</text>
+      <text x="240" y="160" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <!-- FK: course_id -->
+      <rect x="5" y="172" width="28" height="16" rx="4" fill="#94a3b8" />
+      <text x="19" y="184" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">FK</text>
+      <text x="42" y="184" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">course_id</text>
+      <text x="240" y="184" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+
+      <!-- FK: reviewed_by_admin -->
+      <rect x="5" y="196" width="28" height="16" rx="4" fill="#94a3b8" />
+      <text x="19" y="208" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">FK</text>
+      <text x="42" y="208" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">reviewed_by_admin</text>
+      <text x="240" y="208" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+    </g>
+  </g>
+
+  <!-- ==================== ENTITY 4: ANNOUNCEMENT (Right Middle) ==================== -->
+  <g transform="translate(1040, 420)" filter="url(#erShadow)">
+    <rect x="0" y="0" width="380" height="280" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="0" y="0" width="380" height="40" rx="10" fill="url(#entNotice)" />
+    <rect x="0" y="24" width="380" height="16" fill="url(#entNotice)" />
+    <text x="190" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      ANNOUNCEMENT (Collection: announcements)
+    </text>
+    <g transform="translate(14, 52)" font-family="Arial, sans-serif" font-size="11.5">
+      <!-- PK: notice_id -->
+      <rect x="0" y="0" width="352" height="24" fill="#f5f3ff" />
+      <rect x="5" y="4" width="28" height="16" rx="4" fill="#8b5cf6" />
+      <text x="19" y="16" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">PK</text>
+      <text x="42" y="16" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">_id</text>
+      <text x="240" y="16" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+
+      <text x="42" y="40" font-family="Consolas, monospace" fill="#1e293b">title</text>
+      <text x="240" y="40" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="64" font-family="Consolas, monospace" fill="#1e293b">category (Exam/Holiday)</text>
+      <text x="240" y="64" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="88" font-family="Consolas, monospace" fill="#1e293b">priority (Urgent/Normal)</text>
+      <text x="240" y="88" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="112" font-family="Consolas, monospace" fill="#1e293b">content</text>
+      <text x="240" y="112" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="136" font-family="Consolas, monospace" fill="#1e293b">publish_date</text>
+      <text x="240" y="136" font-family="Consolas, monospace" fill="#64748b">Date</text>
+
+      <text x="42" y="160" font-family="Consolas, monospace" fill="#1e293b">is_active</text>
+      <text x="240" y="160" font-family="Consolas, monospace" fill="#64748b">Boolean</text>
+
+      <!-- FK: admin_author_id -->
+      <rect x="5" y="196" width="28" height="16" rx="4" fill="#94a3b8" />
+      <text x="19" y="208" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">FK</text>
+      <text x="42" y="208" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">admin_author_id</text>
+      <text x="240" y="208" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+    </g>
+  </g>
+
+  <!-- ==================== ENTITY 5: STUDENT (Bottom Left) ==================== -->
+  <g transform="translate(60, 750)" filter="url(#erShadow)">
+    <rect x="0" y="0" width="390" height="210" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="0" y="0" width="390" height="40" rx="10" fill="url(#entStudent)" />
+    <rect x="0" y="24" width="390" height="16" fill="url(#entStudent)" />
+    <text x="195" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="14" fill="#ffffff">
+      STUDENT (Collection: students)
+    </text>
+    <g transform="translate(14, 52)" font-family="Arial, sans-serif" font-size="11.5">
+      <!-- PK: student_id -->
+      <rect x="0" y="0" width="362" height="24" fill="#ecfdf5" />
+      <rect x="5" y="4" width="28" height="16" rx="4" fill="#10b981" />
+      <text x="19" y="16" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">PK</text>
+      <text x="42" y="16" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">_id</text>
+      <text x="240" y="16" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+
+      <text x="42" y="40" font-family="Consolas, monospace" fill="#1e293b">full_name</text>
+      <text x="240" y="40" font-family="Consolas, monospace" fill="#64748b">String</text>
+
+      <text x="42" y="64" font-family="Consolas, monospace" fill="#1e293b">email</text>
+      <text x="240" y="64" font-family="Consolas, monospace" fill="#64748b">String (Unique)</text>
+
+      <text x="42" y="88" font-family="Consolas, monospace" fill="#1e293b">password_hash</text>
+      <text x="240" y="88" font-family="Consolas, monospace" fill="#64748b">String (Bcrypt)</text>
+
+      <!-- FK: enrolled_course_id -->
+      <rect x="5" y="100" width="28" height="16" rx="4" fill="#94a3b8" />
+      <text x="19" y="112" text-anchor="middle" font-weight="bold" font-size="9" fill="#ffffff">FK</text>
+      <text x="42" y="112" font-family="Consolas, monospace" font-weight="bold" fill="#1e293b">enrolled_course_id</text>
+      <text x="240" y="112" font-family="Consolas, monospace" fill="#64748b">ObjectId</text>
+
+      <text x="42" y="136" font-family="Consolas, monospace" fill="#1e293b">registration_date</text>
+      <text x="240" y="136" font-family="Consolas, monospace" fill="#64748b">Date</text>
+    </g>
+  </g>
+
+  <!-- ==================== CROW'S FOOT RELATIONSHIP LINES ==================== -->
+
+  <!-- 1. Admin to Course (1 to Many: 1:N) -->
+  <path d="M 600 365 L 600 395 L 260 395 L 260 420" fill="none" stroke="#dc2626" stroke-width="2.5" />
+  <!-- '1' indicator at Admin -->
+  <line x1="592" y1="375" x2="608" y2="375" stroke="#dc2626" stroke-width="2" />
+  <line x1="592" y1="380" x2="608" y2="380" stroke="#dc2626" stroke-width="2" />
+  <!-- Crow's foot at Course -->
+  <line x1="250" y1="410" x2="260" y2="420" stroke="#dc2626" stroke-width="2" />
+  <line x1="270" y1="410" x2="260" y2="420" stroke="#dc2626" stroke-width="2" />
+  <text x="430" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#dc2626">1 : N (Manages Courses)</text>
+
+  <!-- 2. Admin to Admission (1 to Many: 1:N) -->
+  <line x1="750" y1="365" x2="750" y2="420" stroke="#dc2626" stroke-width="2.5" />
+  <line x1="742" y1="375" x2="758" y2="375" stroke="#dc2626" stroke-width="2" />
+  <line x1="742" y1="380" x2="758" y2="380" stroke="#dc2626" stroke-width="2" />
+  <line x1="740" y1="410" x2="750" y2="420" stroke="#dc2626" stroke-width="2" />
+  <line x1="760" y1="410" x2="750" y2="420" stroke="#dc2626" stroke-width="2" />
+  <text x="785" y="395" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#dc2626">1 : N (Reviews)</text>
+
+  <!-- 3. Admin to Announcement (1 to Many: 1:N) -->
+  <path d="M 900 365 L 900 395 L 1230 395 L 1230 420" fill="none" stroke="#dc2626" stroke-width="2.5" />
+  <line x1="892" y1="375" x2="908" y2="375" stroke="#dc2626" stroke-width="2" />
+  <line x1="892" y1="380" x2="908" y2="380" stroke="#dc2626" stroke-width="2" />
+  <line x1="1220" y1="410" x2="1230" y2="420" stroke="#dc2626" stroke-width="2" />
+  <line x1="1240" y1="410" x2="1230" y2="420" stroke="#dc2626" stroke-width="2" />
+  <text x="1065" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#dc2626">1 : N (Publishes Notices)</text>
+
+  <!-- 4. Course to Admission (1 to Many: 1:N) -->
+  <line x1="450" y1="560" x2="560" y2="560" stroke="#2563eb" stroke-width="2.5" />
+  <!-- '1' at Course -->
+  <line x1="460" y1="552" x2="460" y2="568" stroke="#2563eb" stroke-width="2" />
+  <line x1="465" y1="552" x2="465" y2="568" stroke="#2563eb" stroke-width="2" />
+  <!-- Crow's foot at Admission -->
+  <line x1="550" y1="550" x2="560" y2="560" stroke="#2563eb" stroke-width="2" />
+  <line x1="550" y1="570" x2="560" y2="560" stroke="#2563eb" stroke-width="2" />
+  <text x="505" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#2563eb">1 : N (Subject of)</text>
+
+  <!-- 5. Course to Student (1 to Many: 1:N) -->
+  <line x1="250" y1="700" x2="250" y2="750" stroke="#059669" stroke-width="2.5" />
+  <!-- '1' at Course -->
+  <line x1="242" y1="710" x2="258" y2="710" stroke="#059669" stroke-width="2" />
+  <line x1="242" y1="715" x2="258" y2="715" stroke="#059669" stroke-width="2" />
+  <!-- Crow's foot at Student -->
+  <line x1="240" y1="740" x2="250" y2="750" stroke="#059669" stroke-width="2" />
+  <line x1="260" y1="740" x2="250" y2="750" stroke="#059669" stroke-width="2" />
+  <text x="290" y="730" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#059669">1 : N (Enrolls)</text>
+
+  <!-- Database Resilience Infobox (Bottom Right) -->
+  <g transform="translate(560, 750)">
+    <rect x="0" y="0" width="860" height="210" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#erShadow)" />
+    <rect x="0" y="0" width="860" height="38" rx="10" fill="#0b224d" />
+    <rect x="0" y="22" width="860" height="16" fill="#0b224d" />
+    <text x="25" y="24" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="13" fill="#ffffff">
+      DATABASE RESILIENCE &amp; MONGOOSE INTEGRATION
+    </text>
+    <g transform="translate(25, 55)" font-family="Arial, sans-serif" font-size="12" fill="#334155">
+      <text x="0" y="15" font-weight="bold" fill="#0369a1">• Non-blocking Resilient Architecture:</text>
+      <text x="0" y="32">Express routes utilize fallback data from config/defaultData.js if MongoDB Atlas handshake is delayed.</text>
+
+      <text x="0" y="60" font-weight="bold" fill="#0369a1">• Auto-Seeding Protocol (syncDatabaseDefaults):</text>
+      <text x="0" y="77">Upon connecting, automatically seeds Super Admin ("admin@ansaritutorial.com") and official brochure courses.</text>
+
+      <text x="0" y="105" font-weight="bold" fill="#0369a1">• Connection Parameters:</text>
+      <text x="0" y="122">DNS set to Google DNS [8.8.8.8, 8.8.4.4] with autoSelectFamily: false and 20s background auto-reconnect.</text>
+    </g>
+  </g>
+
+  <!-- Bottom Legend -->
+  <g transform="translate(40, 970)">
+    <text x="20" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">ER NOTATIONS:</text>
+    <rect x="130" y="6" width="24" height="15" rx="3" fill="#ef4444" />
+    <text x="142" y="17" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">PK</text>
+    <text x="160" y="18" font-family="Arial, sans-serif" font-size="11" fill="#475569">Primary Key</text>
+
+    <rect x="250" y="6" width="24" height="15" rx="3" fill="#94a3b8" />
+    <text x="262" y="17" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">FK</text>
+    <text x="280" y="18" font-family="Arial, sans-serif" font-size="11" fill="#475569">Foreign Key</text>
+
+    <line x1="370" y1="14" x2="410" y2="14" stroke="#0b224d" stroke-width="2" />
+    <line x1="400" y1="8" x2="410" y2="14" stroke="#0b224d" stroke-width="2" />
+    <line x1="400" y1="20" x2="410" y2="14" stroke="#0b224d" stroke-width="2" />
+    <text x="420" y="18" font-family="Arial, sans-serif" font-size="11" fill="#475569">Crow's Foot (Many Relationship)</text>
+  </g>
+</svg>
